@@ -27,13 +27,6 @@
 	
 	self.buddyArray = [[NSMutableArray alloc] init];
 	
-	for (NSInteger x = 0; x < 20; ++x) {
-		NSDictionary *newBuddy = @{
-								   @"name" : [NSString stringWithFormat:@"Name %zd", x+1],
-								   @"location" : @"Columbus"
-								   };
-		[self.buddyArray addObject:newBuddy];
-	}
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -47,7 +40,33 @@
 	
 	PFUser *currentUser = [PFUser currentUser];
 	if (currentUser) {
-		// do stuff with the user
+		[[PFUser currentUser] fetchInBackgroundWithBlock:^(PFObject *object, NSError *error) {
+			// do stuff with the user
+			PFQuery *buddyQuery = [PFUser query];
+			PFUser *currentUser = [PFUser currentUser];
+			NSArray *friends = currentUser[@"friends"];
+			if (!friends) {
+				return;
+			}
+			
+			[buddyQuery whereKey:@"objectId" containedIn:currentUser[@"friends"]];
+			[buddyQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+				if (!error) {
+					for (PFObject *object in objects) {
+						NSDictionary *newBuddy = @{
+												   @"name" : object[@"name"]
+												   };
+						[self.buddyArray addObject:newBuddy];
+					}
+					
+					[self.tableView reloadData];
+				}
+				else {
+					
+				}
+			}];
+		}];
+		
 	} else {
 		// show the signup or login screen
 		[self presentWelcomeVC];
