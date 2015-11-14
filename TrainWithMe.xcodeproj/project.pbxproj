@@ -32,6 +32,8 @@
 		FEA04CB11BF7D60C004ACC93 /* WelcomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04CB01BF7D60C004ACC93 /* WelcomeViewController.m */; };
 		FEA04CB41BF7D838004ACC93 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04CB31BF7D838004ACC93 /* SignUpViewController.m */; };
 		FEA04CB71BF7D94F004ACC93 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04CB61BF7D94F004ACC93 /* LoginViewController.m */; };
+		FEA04CBA1BF7E931004ACC93 /* BuddyTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04CB91BF7E931004ACC93 /* BuddyTableViewCell.m */; };
+		FEA04CBC1BF7EC65004ACC93 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA04CBB1BF7EC65004ACC93 /* profile.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +90,9 @@
 		FEA04CB31BF7D838004ACC93 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		FEA04CB51BF7D94F004ACC93 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		FEA04CB61BF7D94F004ACC93 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
+		FEA04CB81BF7E931004ACC93 /* BuddyTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuddyTableViewCell.h; sourceTree = "<group>"; };
+		FEA04CB91BF7E931004ACC93 /* BuddyTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuddyTableViewCell.m; sourceTree = "<group>"; };
+		FEA04CBB1BF7EC65004ACC93 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,10 +171,13 @@
 			children = (
 				FEA04C931BF7D267004ACC93 /* Bolts.framework */,
 				FEA04C941BF7D267004ACC93 /* Parse.framework */,
+				FEA04CBB1BF7EC65004ACC93 /* profile.png */,
 				FE15950C1BF7CDDA008670B4 /* AppDelegate.h */,
 				FE15950D1BF7CDDA008670B4 /* AppDelegate.m */,
 				FE15950F1BF7CDDA008670B4 /* ViewController.h */,
 				FE1595101BF7CDDA008670B4 /* ViewController.m */,
+				FEA04CB81BF7E931004ACC93 /* BuddyTableViewCell.h */,
+				FEA04CB91BF7E931004ACC93 /* BuddyTableViewCell.m */,
 				FEA04CAF1BF7D60C004ACC93 /* WelcomeViewController.h */,
 				FEA04CB01BF7D60C004ACC93 /* WelcomeViewController.m */,
 				FEA04CB21BF7D838004ACC93 /* SignUpViewController.h */,
@@ -317,6 +325,7 @@
 				FE1595191BF7CDDA008670B4 /* LaunchScreen.storyboard in Resources */,
 				FE1595161BF7CDDA008670B4 /* Assets.xcassets in Resources */,
 				FE1595141BF7CDDA008670B4 /* Main.storyboard in Resources */,
+				FEA04CBC1BF7EC65004ACC93 /* profile.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +353,7 @@
 				FE1595111BF7CDDA008670B4 /* ViewController.m in Sources */,
 				FEA04CB41BF7D838004ACC93 /* SignUpViewController.m in Sources */,
 				FEA04CB71BF7D94F004ACC93 /* LoginViewController.m in Sources */,
+				FEA04CBA1BF7E931004ACC93 /* BuddyTableViewCell.m in Sources */,
 				FEA04CB11BF7D60C004ACC93 /* WelcomeViewController.m in Sources */,
 				FE15950E1BF7CDDA008670B4 /* AppDelegate.m in Sources */,
 				FE15950B1BF7CDDA008670B4 /* main.m in Sources */,
