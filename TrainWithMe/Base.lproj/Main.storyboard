@@ -14,15 +14,60 @@
                         <viewControllerLayoutGuide type="bottom" id="pGI-Vv-vSg"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="hgt-Bd-mgf">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdn-Oe-cSg">
+                                <rect key="frame" x="84" y="63" width="152" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="pOq-gr-rI2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhk-Jm-pSF">
+                                <rect key="frame" x="84" y="101" width="152" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="hNS-fm-SyC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7R-P6-626">
+                                <rect key="frame" x="84" y="139" width="152" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="TaM-Io-gnl"/>
+                                    <constraint firstAttribute="width" constant="152" id="VZL-rv-G57"/>
+                                </constraints>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="loginPressed" destination="oBC-et-2PK" eventType="touchUpInside" id="aYZ-hS-xrK"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dhk-Jm-pSF" firstAttribute="top" secondItem="bdn-Oe-cSg" secondAttribute="bottom" constant="8" id="DTX-6s-JOi"/>
+                            <constraint firstItem="bdn-Oe-cSg" firstAttribute="centerX" secondItem="hgt-Bd-mgf" secondAttribute="centerX" id="Evw-12-PHQ"/>
+                            <constraint firstItem="Dhk-Jm-pSF" firstAttribute="centerX" secondItem="hgt-Bd-mgf" secondAttribute="centerX" id="Gj5-TY-q4x"/>
+                            <constraint firstItem="t7R-P6-626" firstAttribute="centerX" secondItem="hgt-Bd-mgf" secondAttribute="centerX" id="OyW-iJ-idy"/>
+                            <constraint firstItem="t7R-P6-626" firstAttribute="top" secondItem="Dhk-Jm-pSF" secondAttribute="bottom" constant="8" id="eR3-j1-0Mn"/>
+                            <constraint firstItem="bdn-Oe-cSg" firstAttribute="top" secondItem="Jvp-bp-W2K" secondAttribute="bottom" constant="43" id="nHr-lW-tCg"/>
+                        </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="passwordTextField" destination="Dhk-Jm-pSF" id="lUY-aG-Yf6"/>
+                        <outlet property="usernameTextField" destination="bdn-Oe-cSg" id="Ipi-X9-O6y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GPo-wm-T9c" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-75" y="-91"/>
+            <point key="canvasLocation" x="-155" y="-126"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="cre-3g-8g6">

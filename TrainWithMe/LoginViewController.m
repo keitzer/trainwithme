@@ -7,9 +7,11 @@
 //
 
 #import "LoginViewController.h"
+#import <Parse/Parse.h>
 
 @interface LoginViewController ()
-
+@property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @end
 
 @implementation LoginViewController
@@ -19,9 +21,21 @@
     // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+-(IBAction)loginPressed {
+	[PFUser logInWithUsernameInBackground:self.usernameTextField.text
+								 password:self.passwordTextField.text
+									block:^(PFUser *user, NSError *error) {
+										if (user) {
+											// Do stuff after successful login.
+											[self dismissViewControllerAnimated:YES completion:nil];
+										} else {
+											// The login failed. Check error to see why.
+											UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login Fail" message:@"Something went wrong when loggin in. Please try again." preferredStyle:UIAlertControllerStyleAlert];
+											[alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
+											[self presentViewController:alert animated:YES completion:nil];
+
+										}
+									}];
 }
 
 /*
