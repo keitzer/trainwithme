@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "WelcomeViewController.h"
 #import <Parse/Parse.h>
 
 @interface ViewController () <UITextFieldDelegate>
@@ -20,6 +21,21 @@
 	[super viewDidLoad];
 	
 	self.nameLabel.text = @"Alex";
+}
+
+-(void)viewDidAppear:(BOOL)animated {
+	[super viewDidAppear:animated];
+	
+	PFUser *currentUser = [PFUser currentUser];
+	if (currentUser) {
+		// do stuff with the user
+	} else {
+		// show the signup or login screen
+		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+		WelcomeViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
+		[self presentViewController:loginVC animated:YES completion:nil];
+	}
+	
 }
 
 - (void)didReceiveMemoryWarning {

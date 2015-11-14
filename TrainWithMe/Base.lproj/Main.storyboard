@@ -5,6 +5,64 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
     </dependencies>
     <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="cre-3g-8g6">
+            <objects>
+                <viewController storyboardIdentifier="welcomeVC" id="o5p-Cw-eNR" customClass="WelcomeViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="KW4-lX-jyY"/>
+                        <viewControllerLayoutGuide type="bottom" id="mmS-Zh-EhB"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="z7R-yj-Ikg">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rG-mA-mXC">
+                                <rect key="frame" x="83" y="340" width="154" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="154" id="XG1-Nk-ci7"/>
+                                    <constraint firstAttribute="height" constant="30" id="ftg-uh-pO6"/>
+                                </constraints>
+                                <state key="normal" title="Log In"/>
+                                <connections>
+                                    <action selector="loginPressed" destination="o5p-Cw-eNR" eventType="touchUpInside" id="Suh-xT-zEL"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJO-Mi-DhB">
+                                <rect key="frame" x="69" y="269" width="183" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="183" id="RTX-qw-cW2"/>
+                                    <constraint firstAttribute="height" constant="30" id="T1K-xc-P91"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signupPressed" destination="o5p-Cw-eNR" eventType="touchUpInside" id="SIv-D2-Y1t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="MJO-Mi-DhB" firstAttribute="top" secondItem="KW4-lX-jyY" secondAttribute="bottom" constant="200" id="1QE-JB-Eif"/>
+                            <constraint firstItem="3rG-mA-mXC" firstAttribute="top" secondItem="MJO-Mi-DhB" secondAttribute="bottom" constant="41" id="6he-sP-YtN"/>
+                            <constraint firstItem="3rG-mA-mXC" firstAttribute="centerX" secondItem="z7R-yj-Ikg" secondAttribute="centerX" id="mOa-P3-ZJE"/>
+                            <constraint firstItem="MJO-Mi-DhB" firstAttribute="centerY" secondItem="z7R-yj-Ikg" secondAttribute="centerY" id="vua-RR-4He"/>
+                            <constraint firstItem="MJO-Mi-DhB" firstAttribute="centerX" secondItem="z7R-yj-Ikg" secondAttribute="centerX" id="yY9-Uu-MHP"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="1QE-JB-Eif"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xb0-Dm-ME2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-39" y="532"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
@@ -44,7 +102,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="243" y="339"/>
+            <point key="canvasLocation" x="707" y="621"/>
         </scene>
     </scenes>
 </document>
