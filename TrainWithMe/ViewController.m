@@ -18,7 +18,7 @@
 	[super viewDidLoad];
 	
 	self.nameLabel.text = @"Testing!!";
-	self.nameLabel.text = @"Alex";
+	self.nameLabel.text = @"Alexxx";
 }
 
 - (void)didReceiveMemoryWarning {
