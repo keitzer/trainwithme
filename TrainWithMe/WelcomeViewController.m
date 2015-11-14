@@ -10,7 +10,7 @@
 #import "SignUpViewController.h"
 #import "LoginViewController.h"
 
-@interface WelcomeViewController ()
+@interface WelcomeViewController () <SignUpViewControllerDelegate>
 @end
 
 @implementation WelcomeViewController
@@ -28,6 +28,7 @@
 -(IBAction)signupPressed {
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	SignUpViewController *signupVC = [storyboard instantiateViewControllerWithIdentifier:@"signupVC"];
+	signupVC.delegate = self;
 	[self.navigationController pushViewController:signupVC animated:YES];
 }
 
@@ -37,6 +38,11 @@
 	[self.navigationController pushViewController:loginVC animated:YES];
 }
 
+#pragma mark - Signup VC
+
+-(void)signUpViewControllerSucceeded {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
 /*
 #pragma mark - Navigation
 

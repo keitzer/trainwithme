@@ -7,9 +7,12 @@
 //
 
 #import "SignUpViewController.h"
+#import <Parse/Parse.h>
 
 @interface SignUpViewController ()
-
+@property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
+@property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, weak) IBOutlet UITextField *confirmPWTextField;
 @end
 
 @implementation SignUpViewController
@@ -22,6 +25,33 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)signupPressed {
+	if (![self.confirmPWTextField.text isEqualToString:self.passwordTextField.text]) {
+		[self alertWithTitle:@"Password Mismatch" andMessage:@"The passwords do not match."];
+		return;
+	}
+	
+	PFUser *user = [PFUser user];
+	user.username = [self.usernameTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
+	user.password = [self.passwordTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];;
+	
+	[user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+		if (!error) {   // Hooray! Let them use the app now.
+			if (self.delegate) {
+				[self.delegate signUpViewControllerSucceeded];
+			}
+		} else {
+			[self alertWithTitle:@"Signup Issue" andMessage:@"Sorry, something went wrong with Sign Up. Try again!"];
+		}
+	}];
+}
+
+-(void)alertWithTitle:(NSString*)title andMessage:(NSString*)message {
+	UIAlertController *alert = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleAlert];
+	[alert addAction:[UIAlertAction actionWithTitle:@"Okay" style:UIAlertActionStyleDefault handler:nil]];
+	[self presentViewController:alert animated:YES completion:nil];
 }
 
 /*

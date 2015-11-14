@@ -136,11 +136,74 @@
                         <viewControllerLayoutGuide type="bottom" id="Ty3-5f-hX8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4PH-TX-Mnm">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pds-o8-ETj">
+                                <rect key="frame" x="84" y="65" width="152" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="AGv-j3-uSh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f16-BM-i0c">
+                                <rect key="frame" x="84" y="141" width="152" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="END-pJ-r5I"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dty-wF-aQY">
+                                <rect key="frame" x="84" y="103" width="152" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="152" id="bLS-6P-9wP"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-Vr-Ufm">
+                                <rect key="frame" x="84" y="179" width="152" height="30"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="EvI-MZ-2SU"/>
+                                    <constraint firstAttribute="width" constant="152" id="HDI-Dp-B76"/>
+                                </constraints>
+                                <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signupPressed" destination="EKh-hb-NIp" eventType="touchUpInside" id="ON7-fF-5B6"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Dty-wF-aQY" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="2dI-tA-21R"/>
+                            <constraint firstItem="Pds-o8-ETj" firstAttribute="top" secondItem="hly-Bc-Pxq" secondAttribute="bottom" constant="45" id="BoJ-gs-tqB"/>
+                            <constraint firstItem="Pds-o8-ETj" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="Idq-03-bHH"/>
+                            <constraint firstItem="hSA-Vr-Ufm" firstAttribute="top" secondItem="f16-BM-i0c" secondAttribute="bottom" constant="8" id="PIf-Sk-Asu"/>
+                            <constraint firstItem="Dty-wF-aQY" firstAttribute="top" secondItem="Pds-o8-ETj" secondAttribute="bottom" constant="8" id="Y2W-HW-uI5"/>
+                            <constraint firstItem="f16-BM-i0c" firstAttribute="top" secondItem="Dty-wF-aQY" secondAttribute="bottom" constant="8" id="hal-An-LYp"/>
+                            <constraint firstItem="f16-BM-i0c" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="pdi-IO-1Vh"/>
+                            <constraint firstItem="f16-BM-i0c" firstAttribute="top" secondItem="Pds-o8-ETj" secondAttribute="bottom" constant="8" id="qVl-9I-lb3"/>
+                            <constraint firstItem="hSA-Vr-Ufm" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="xc7-HK-Iaf"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qVl-9I-lb3"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="confirmPWTextField" destination="f16-BM-i0c" id="j4E-f2-XSv"/>
+                        <outlet property="passwordTextField" destination="Dty-wF-aQY" id="DqL-wE-0Lc"/>
+                        <outlet property="usernameTextField" destination="Pds-o8-ETj" id="MuL-8g-bcq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mxX-zj-ela" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -174,6 +237,14 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="fKf-vO-3eL"/>
                                 </connections>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Tky-Ub-XgR">
+                                <rect key="frame" x="94" y="122" width="135" height="30"/>
+                                <animations/>
+                                <state key="normal" title="Log Out"/>
+                                <connections>
+                                    <action selector="logOut" destination="BYZ-38-t0r" eventType="touchUpInside" id="lj6-Ml-sgk"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>

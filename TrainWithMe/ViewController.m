@@ -31,11 +31,7 @@
 		// do stuff with the user
 	} else {
 		// show the signup or login screen
-		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-		WelcomeViewController *welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
-		UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
-		
-		[self presentViewController:navBar animated:YES completion:nil];
+		[self presentWelcomeVC];
 	}
 	
 }
@@ -52,6 +48,19 @@
 	[gym saveInBackground];
 	
 	return YES;
+}
+
+-(IBAction)logOut {
+	[PFUser logOut];
+	[self presentWelcomeVC];
+}
+
+-(void)presentWelcomeVC {
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	WelcomeViewController *welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
+	UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
+	
+	[self presentViewController:navBar animated:YES completion:nil];
 }
 
 @end
