@@ -1,18 +1,18 @@
 //
-//  WelcomeViewController.m
+//  SignUpViewController.m
 //  TrainWithMe
 //
 //  Created by Alex Ogorek on 11/14/15.
 //  Copyright © 2015 OHIOHack. All rights reserved.
 //
 
-#import "WelcomeViewController.h"
 #import "SignUpViewController.h"
 
-@interface WelcomeViewController ()
+@interface SignUpViewController ()
+
 @end
 
-@implementation WelcomeViewController
+@implementation SignUpViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,16 +22,6 @@
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
-}
-
--(IBAction)signupPressed {
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-	SignUpViewController *signupVC = [storyboard instantiateViewControllerWithIdentifier:@"signupVC"];
-	[self.navigationController pushViewController:signupVC animated:YES];
-}
-
--(IBAction)loginPressed {
-	NSLog(@"login pressed");
 }
 
 /*

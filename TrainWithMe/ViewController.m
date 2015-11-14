@@ -32,8 +32,10 @@
 	} else {
 		// show the signup or login screen
 		UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-		WelcomeViewController *loginVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
-		[self presentViewController:loginVC animated:YES completion:nil];
+		WelcomeViewController *welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
+		UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
+		
+		[self presentViewController:navBar animated:YES completion:nil];
 	}
 	
 }
