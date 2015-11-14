@@ -9,14 +9,15 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-//test
+@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @end
 
 @implementation ViewController
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.//whatever//change.
+	
+	self.nameLabel.text = @"Testing!!";
 }
 
 - (void)didReceiveMemoryWarning {
