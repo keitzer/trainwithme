@@ -8,6 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
+
+@protocol WelcomeVCDelegate <NSObject>
+
+-(void)signUpSuccess;
+
+@end
+
 @interface WelcomeViewController : UIViewController
 
+@property (nonatomic, weak) id <WelcomeVCDelegate> delegate;
 @end

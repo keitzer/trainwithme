@@ -14,7 +14,7 @@
 #import "Color.h"
 #import "SearchViewController.h"
 
-@interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, AccountVCDelegate>
+@interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, AccountVCDelegate, WelcomeVCDelegate>
 @property (nonatomic, strong) NSMutableArray *buddyArray;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @property (nonatomic, weak) IBOutlet UIButton *searchButton;
@@ -82,18 +82,35 @@
 -(void)presentWelcomeVC {
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	WelcomeViewController *welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
+	welcomeVC.delegate = self;
 	UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
 	
 	[self presentViewController:navBar animated:YES completion:nil];
 }
 
--(IBAction)profilePressed {
+-(void)signUpSuccess {
+	//[self dismissViewControllerAnimated:NO completion:nil];
+	//[self showProfileAnimated:NO];
+	
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	AccountViewController *accountVC = [storyboard instantiateViewControllerWithIdentifier:@"accountVC"];
 	accountVC.delegate = self;
 	UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:accountVC];
 	
-	[self presentViewController:navBar animated:YES completion:nil];
+	[self.navigationController pushViewController:accountVC animated:YES];
+}
+
+-(IBAction)profilePressed {
+	[self showProfileAnimated:YES];
+}
+
+-(void)showProfileAnimated:(BOOL)isAnimted {
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	AccountViewController *accountVC = [storyboard instantiateViewControllerWithIdentifier:@"accountVC"];
+	accountVC.delegate = self;
+	UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:accountVC];
+	
+	[self presentViewController:navBar animated:isAnimted completion:nil];
 }
 
 -(void)accountVCCancelled {

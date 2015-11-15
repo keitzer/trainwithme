@@ -9,8 +9,10 @@
 #import "WelcomeViewController.h"
 #import "SignUpViewController.h"
 #import "LoginViewController.h"
+#import "AccountViewController.h"
+#import <Parse/Parse.h>
 
-@interface WelcomeViewController () <SignUpViewControllerDelegate>
+@interface WelcomeViewController () <SignUpViewControllerDelegate, AccountVCDelegate>
 @end
 
 @implementation WelcomeViewController
@@ -49,7 +51,26 @@
 #pragma mark - Signup VC
 
 -(void)signUpViewControllerSucceeded {
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	AccountViewController *accountVC = [storyboard instantiateViewControllerWithIdentifier:@"accountVC"];
+	accountVC.delegate = self;
+	
+	[self.navigationController pushViewController:accountVC animated:YES];
+}
+
+-(void)accountVCCancelled {
 	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)accountVCSaved {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)accountVCLoggedOut {
+	[PFUser logOut];
+	[self dismissViewControllerAnimated:YES completion:^{
+		//[self presentWelcomeVC];
+	}];
 }
 /*
 #pragma mark - Navigation
