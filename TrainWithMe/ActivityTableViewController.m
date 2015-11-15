@@ -11,18 +11,25 @@
 #import "SVProgressHUD.h"
 
 @interface ActivityTableViewController ()
+@property (nonatomic, strong) NSMutableArray *savedTypes; //array of strings (names)
 @property (nonatomic, strong) NSMutableArray *activityTypes; //array of dictionaries
 @end
 
 @implementation ActivityTableViewController
 
 -(id)initWithSelectedTypes:(NSArray *)selectedObjects {
-	return self;
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	
+	ActivityTableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"activityVC"];
+	vc.savedTypes = [selectedObjects mutableCopy];
+	
+	return vc;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.activityTypes = [[NSMutableArray alloc] init];
+	
 	[SVProgressHUD showWithStatus:@"Loading Activities..."];
 	
 	PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
@@ -31,9 +38,11 @@
 		
 		if (!error) {
 			for (PFObject *object in objects) {
+				BOOL shouldBeChecked = [self.savedTypes containsObject:object[@"name"]];
+				
 				NSDictionary *type = @{
 									   @"name" : object[@"name"],
-									   @"checked" : @NO
+									   @"checked" : @(shouldBeChecked)
 									   };
 				[self.activityTypes addObject:type];
 			}
@@ -63,14 +72,14 @@
 
 -(IBAction)savePressed {
 	if (self.delegate) {
-		NSMutableArray *savedObjects = [[NSMutableArray alloc] init];
+		[self.savedTypes removeAllObjects];
 		for (NSDictionary *activity in self.activityTypes) {
 			if ([activity[@"checked"] boolValue]) {
-				[savedObjects addObject:activity];
+				[self.savedTypes addObject:activity[@"name"]];
 			}
 		}
 		
-		[self.delegate activityVCObjectsSelected:savedObjects];
+		[self.delegate activityVCObjectsSelected:self.savedTypes];
 	}
 }
 
@@ -81,6 +90,14 @@
     // Configure the cell...
 	cell.textLabel.text = self.activityTypes[indexPath.row][@"name"];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	
+	BOOL checked = [self.activityTypes[indexPath.row][@"checked"] boolValue];
+	if (checked) {
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	}
+	else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
+	}
     
     return cell;
 }

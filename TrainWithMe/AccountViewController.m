@@ -53,12 +53,7 @@
 	currentUser[@"name"] = [self.nameTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 	currentUser[@"weight"] = @([[self.weightTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]] integerValue]);
 	
-	NSMutableArray *activityNames = [[NSMutableArray alloc] init];
-	for (NSDictionary *activity in self.activityArray) {
-		[activityNames addObject:activity[@"name"]];
-	}
-	
-	currentUser[@"activities"] = activityNames;
+	currentUser[@"activities"] = self.activityArray;
 	
 	[currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		
@@ -93,10 +88,10 @@
 		activityString = [NSString stringWithFormat:@"%zd Activities", [self.activityArray count]];
 	}
 	else if ([self.activityArray count] == 2) {
-		activityString = [NSString stringWithFormat:@"%@, %@", self.activityArray[0][@"name"], self.activityArray[1][@"name"]];
+		activityString = [NSString stringWithFormat:@"%@, %@", self.activityArray[0], self.activityArray[1]];
 	}
 	else if ([self.activityArray count] == 1) {
-		activityString = self.activityArray[0][@"name"];
+		activityString = self.activityArray[0];
 	}
 	else {
 		activityString = @"Tap to Choose Activities";
@@ -117,8 +112,7 @@
 }
 
 -(IBAction)activityPressed {
-	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-	ActivityTableViewController *activityVC = [storyboard instantiateViewControllerWithIdentifier:@"activityVC"];
+	ActivityTableViewController *activityVC = [[ActivityTableViewController alloc] initWithSelectedTypes:self.activityArray];
 	activityVC.delegate = self;
 	[self.navigationController pushViewController:activityVC animated:YES];
 }
