@@ -173,7 +173,7 @@
 		locationString = [NSString stringWithFormat:@"%zd Locations", self.locationArray.count];
 	}
 	else if (self.locationArray.count == 1) {
-		locationString = self.locationArray[0];
+		locationString = self.locationArray[0][@"name"];
 	}
 	else {
 		locationString = @"Tap to Choose Location";

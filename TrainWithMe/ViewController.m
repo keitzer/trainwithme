@@ -16,6 +16,7 @@
 @interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, AccountVCDelegate>
 @property (nonatomic, strong) NSMutableArray *buddyArray;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
+@property (nonatomic, weak) IBOutlet UIButton *searchButton;
 @end
 
 @implementation ViewController
@@ -26,6 +27,8 @@
 	self.buddyArray = [[NSMutableArray alloc] init];
 	self.navigationItem.title = @"TrainWithMe";
 	self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
+	
+	self.searchButton.layer.cornerRadius = self.searchButton.frame.size.width/2;
 }
 
 -(void)viewWillAppear:(BOOL)animated {

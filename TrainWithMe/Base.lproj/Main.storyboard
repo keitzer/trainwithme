@@ -21,6 +21,7 @@
             <string>Comfortaa-Bold</string>
             <string>Comfortaa-Bold</string>
             <string>Comfortaa-Bold</string>
+            <string>Comfortaa-Bold</string>
         </mutableArray>
         <mutableArray key="Comfortaa-Regular.ttf">
             <string>Comfortaa-Regular</string>
@@ -734,14 +735,29 @@
                                     <outlet property="delegate" destination="BYZ-38-t0r" id="WPZ-2q-Rwz"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qeT-Eq-DWH">
+                                <rect key="frame" x="235" y="483" width="65" height="65"/>
+                                <animations/>
+                                <color key="backgroundColor" red="1" green="0.98039215686274506" blue="0.36470588235294116" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="AE1-PP-bJb"/>
+                                    <constraint firstAttribute="width" secondItem="qeT-Eq-DWH" secondAttribute="height" multiplier="1:1" id="Pb9-ch-md8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="50"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="0.396078431372549" green="0.49803921568627452" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.396078431372549" green="0.49803921568627452" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3qL-Dk-kxi"/>
                             <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="D29-x6-8nF"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="qeT-Eq-DWH" secondAttribute="bottom" constant="20" id="DjR-TQ-T2Q"/>
                             <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vze-zH-ygw"/>
                             <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="a8Z-Az-UnJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="qeT-Eq-DWH" secondAttribute="trailing" constant="4" id="k16-za-MiE"/>
                             <constraint firstAttribute="trailingMargin" secondItem="GCJ-EJ-5Tl" secondAttribute="trailing" constant="-20" id="meU-Ef-m3p"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="GCJ-EJ-5Tl" secondAttribute="bottom" id="rEO-Jc-Quc"/>
                         </constraints>
@@ -761,6 +777,7 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="searchButton" destination="qeT-Eq-DWH" id="0uK-eQ-dBA"/>
                         <outlet property="tableView" destination="GCJ-EJ-5Tl" id="VHY-WO-d3Q"/>
                     </connections>
                 </viewController>
@@ -915,19 +932,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-OD-nDf">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-OD-nDf">
                                 <rect key="frame" x="0.0" y="362" width="320" height="206"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.37647058823529411" green="0.90980392156862744" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="206" id="Nbm-uZ-sVu"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X1g-OM-A3h">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELL" id="X1g-OM-A3h">
                                         <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X1g-OM-A3h" id="fpM-qV-vpS">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <animations/>
                                         </tableViewCellContentView>
@@ -938,11 +955,11 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-ae-m1B" customClass="AGSMapView">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="362"/>
                                 <animations/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.37647058823529411" green="0.90980392156862744" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.37647058823529411" green="0.90980392156862744" blue="0.69411764705882351" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="mrT-OD-nDf" firstAttribute="leading" secondItem="eHd-PL-Ggr" secondAttribute="leading" id="2Gp-DF-0WC"/>
                             <constraint firstItem="mrT-OD-nDf" firstAttribute="top" secondItem="QEC-ae-m1B" secondAttribute="bottom" id="DOg-Cb-F1a"/>
