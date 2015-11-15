@@ -11,8 +11,9 @@
 #import "SVProgressHUD.h"
 #import "ActivityTableViewController.h"
 #import "Color.h"
+#import "TimeViewController.h"
 
-@interface AccountViewController () <ActivityVCDelegate>
+@interface AccountViewController () <ActivityVCDelegate, TimeVCDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *weightTextField;
 @property (nonatomic, weak) IBOutlet UIButton *activityButton;
@@ -23,6 +24,9 @@
 
 @property (nonatomic, strong) NSMutableArray *activityArray;
 @property (nonatomic, strong) NSMutableArray *intensityArray;
+
+@property (nonatomic, strong) NSDate *startTime;
+@property (nonatomic, strong) NSDate *endTime;
 @end
 
 @implementation AccountViewController
@@ -46,6 +50,16 @@
 	}
 	[self updateActivityButtonText];
 	[self updateIntensityButtonText];
+	
+	self.startTime = currentUser[@"startTime"];
+	self.endTime = currentUser[@"endTime"];
+	if (!self.startTime) {
+		self.startTime = [NSDate date];
+	}
+	if (!self.endTime) {
+		self.endTime = [NSDate date];
+	}
+	[self updateTimeButtonText];
 	
 	self.navigationItem.title = @"Profile";
 	
@@ -73,6 +87,8 @@
 	
 	currentUser[@"activities"] = self.activityArray;
 	currentUser[@"intensities"] = self.intensityArray;
+	currentUser[@"startTime"] = self.startTime;
+	currentUser[@"endTime"] = self.endTime;
 	
 	[currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		
@@ -135,6 +151,14 @@
 	[self.intensityButton setTitle:intensityString forState:UIControlStateNormal];
 }
 
+-(void)updateTimeButtonText {
+	NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+	[formatter setDateFormat:@"h:mm a"];
+	
+	NSString *timeLabel = [NSString stringWithFormat:@"%@ - %@", [formatter stringFromDate:self.startTime], [formatter stringFromDate:self.endTime]];
+	[self.timeButton setTitle:timeLabel forState:UIControlStateNormal];
+}
+
 -(void)cancelPressed {
 	if (self.delegate) {
 		[self.delegate accountVCCancelled];
@@ -164,7 +188,9 @@
 }
 
 -(IBAction)timePressed {
-	NSLog(@"time pressed");
+	TimeViewController *timeVC = [[TimeViewController alloc] initWithStartTime:self.startTime endTime:self.endTime];
+	timeVC.delegate = self;
+	[self.navigationController pushViewController:timeVC animated:YES];
 }
 
 
@@ -182,6 +208,17 @@
 		[self updateIntensityButtonText];
 	}
 	
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)timeVCTimesSaved:(NSDate *)startTime endTime:(NSDate *)endTime {
+	self.startTime = startTime;
+	self.endTime = endTime;
+	[self updateTimeButtonText];
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)timeVCTimesCancelled {
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

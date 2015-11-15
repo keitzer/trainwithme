@@ -67,6 +67,7 @@
 		FEA04D031BF84DFD004ACC93 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04D021BF84DFD004ACC93 /* Constants.m */; };
 		FEA04D061BF84E74004ACC93 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04D051BF84E74004ACC93 /* Color.m */; };
 		FEA04D081BF86420004ACC93 /* coloredCheckmark.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA04D071BF86420004ACC93 /* coloredCheckmark.png */; };
+		FEE18BD81BF86E1600836B95 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE18BD71BF86E1600836B95 /* TimeViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,8 @@
 		FEA04D041BF84E74004ACC93 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 		FEA04D051BF84E74004ACC93 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 		FEA04D071BF86420004ACC93 /* coloredCheckmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coloredCheckmark.png; sourceTree = "<group>"; };
+		FEE18BD61BF86E1600836B95 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
+		FEE18BD71BF86E1600836B95 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -269,6 +272,8 @@
 				FEA04CB61BF7D94F004ACC93 /* LoginViewController.m */,
 				FEA04CCD1BF81CFE004ACC93 /* ActivityTableViewController.h */,
 				FEA04CCE1BF81CFE004ACC93 /* ActivityTableViewController.m */,
+				FEE18BD61BF86E1600836B95 /* TimeViewController.h */,
+				FEE18BD71BF86E1600836B95 /* TimeViewController.m */,
 				FEA04D011BF84DFD004ACC93 /* Constants.h */,
 				FEA04D021BF84DFD004ACC93 /* Constants.m */,
 				FEA04D041BF84E74004ACC93 /* Color.h */,
@@ -521,6 +526,7 @@
 				FEA04CBF1BF80347004ACC93 /* AccountViewController.m in Sources */,
 				FE15950B1BF7CDDA008670B4 /* main.m in Sources */,
 				FEA04CCC1BF81229004ACC93 /* SVRadialGradientLayer.m in Sources */,
+				FEE18BD81BF86E1600836B95 /* TimeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

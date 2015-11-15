@@ -49,6 +49,8 @@
 	   }
 	 forState:UIControlStateNormal];
 	
+	[[UILabel appearanceWhenContainedIn:[UIDatePicker class], nil] setFont:[UIFont fontWithName:@"Comfortaa-Bold" size:20]];
+	
 	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
 	
 	
