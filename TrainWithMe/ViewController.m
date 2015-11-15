@@ -9,9 +9,10 @@
 #import "ViewController.h"
 #import "WelcomeViewController.h"
 #import "BuddyTableViewCell.h"
+#import "AccountViewController.h"
 #import <Parse/Parse.h>
 
-@interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource>
+@interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, AccountVCDelegate>
 @property (nonatomic, weak) IBOutlet UILabel *nameLabel;
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, strong) NSMutableArray *buddyArray;
@@ -52,6 +53,8 @@
 			[buddyQuery whereKey:@"objectId" containedIn:currentUser[@"friends"]];
 			[buddyQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 				if (!error) {
+					[self.buddyArray removeAllObjects];
+					
 					for (PFObject *object in objects) {
 						NSDictionary *newBuddy = @{
 												   @"name" : object[@"name"]
@@ -88,17 +91,32 @@
 	return YES;
 }
 
--(IBAction)logOut {
-	[PFUser logOut];
-	[self presentWelcomeVC];
-}
-
 -(void)presentWelcomeVC {
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	WelcomeViewController *welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
 	UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:welcomeVC];
 	
 	[self presentViewController:navBar animated:YES completion:nil];
+}
+
+-(IBAction)profilePressed {
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	AccountViewController *accountVC = [storyboard instantiateViewControllerWithIdentifier:@"accountVC"];
+	accountVC.delegate = self;
+	UINavigationController *navBar = [[UINavigationController alloc] initWithRootViewController:accountVC];
+	
+	[self presentViewController:navBar animated:YES completion:nil];
+}
+
+-(void)accountVCSaved {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
+-(void)accountVCLoggedOut {
+	[PFUser logOut];
+	[self dismissViewControllerAnimated:YES completion:^{
+		//[self presentWelcomeVC];
+	}];
 }
 
 #pragma mark - Table View Stuff
