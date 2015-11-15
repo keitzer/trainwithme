@@ -77,6 +77,7 @@
 		FEE18BE61BF87B6C00836B95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BE51BF87B6C00836B95 /* UIKit.framework */; };
 		FEE18BE81BF87BB500836B95 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEE18BE71BF87BB500836B95 /* ArcGIS.bundle */; };
 		FEE18BEB1BF8827900836B95 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE18BEA1BF8827900836B95 /* MapViewController.m */; };
+		FEE18BEE1BF898C500836B95 /* SearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE18BED1BF898C500836B95 /* SearchViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,8 @@
 		FEE18BE71BF87BB500836B95 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<group>"; };
 		FEE18BE91BF8827900836B95 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		FEE18BEA1BF8827900836B95 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		FEE18BEC1BF898C500836B95 /* SearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchViewController.h; sourceTree = "<group>"; };
+		FEE18BED1BF898C500836B95 /* SearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -310,6 +313,8 @@
 				FEE18BD71BF86E1600836B95 /* TimeViewController.m */,
 				FEE18BE91BF8827900836B95 /* MapViewController.h */,
 				FEE18BEA1BF8827900836B95 /* MapViewController.m */,
+				FEE18BEC1BF898C500836B95 /* SearchViewController.h */,
+				FEE18BED1BF898C500836B95 /* SearchViewController.m */,
 				FEA04D011BF84DFD004ACC93 /* Constants.h */,
 				FEA04D021BF84DFD004ACC93 /* Constants.m */,
 				FEA04D041BF84E74004ACC93 /* Color.h */,
@@ -554,6 +559,7 @@
 				FEA04CB41BF7D838004ACC93 /* SignUpViewController.m in Sources */,
 				FEA04CC91BF81229004ACC93 /* SVIndefiniteAnimatedView.m in Sources */,
 				FEA04CB71BF7D94F004ACC93 /* LoginViewController.m in Sources */,
+				FEE18BEE1BF898C500836B95 /* SearchViewController.m in Sources */,
 				FEA04CCF1BF81CFE004ACC93 /* ActivityTableViewController.m in Sources */,
 				FEA04CBA1BF7E931004ACC93 /* BuddyTableViewCell.m in Sources */,
 				FEA04CB11BF7D60C004ACC93 /* WelcomeViewController.m in Sources */,

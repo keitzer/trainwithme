@@ -12,6 +12,7 @@
 #import "AccountViewController.h"
 #import <Parse/Parse.h>
 #import "Color.h"
+#import "SearchViewController.h"
 
 @interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, AccountVCDelegate>
 @property (nonatomic, strong) NSMutableArray *buddyArray;
@@ -108,6 +109,13 @@
 	[self dismissViewControllerAnimated:YES completion:^{
 		//[self presentWelcomeVC];
 	}];
+}
+
+-(IBAction)newSearchPressed {
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	SearchViewController *searchVC = [storyboard instantiateViewControllerWithIdentifier:@"searchVC"];
+	
+	[self presentViewController:searchVC animated:YES completion:nil];
 }
 
 #pragma mark - Table View Stuff

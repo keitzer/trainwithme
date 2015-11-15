@@ -22,8 +22,15 @@
             <string>Comfortaa-Bold</string>
             <string>Comfortaa-Bold</string>
             <string>Comfortaa-Bold</string>
+            <string>Comfortaa-Bold</string>
+            <string>Comfortaa-Bold</string>
+            <string>Comfortaa-Bold</string>
+            <string>Comfortaa-Bold</string>
         </mutableArray>
         <mutableArray key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+            <string>Comfortaa-Regular</string>
+            <string>Comfortaa-Regular</string>
             <string>Comfortaa-Regular</string>
             <string>Comfortaa-Regular</string>
             <string>Comfortaa-Regular</string>
@@ -663,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8y7-oK-dB4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1524" y="-55"/>
+            <point key="canvasLocation" x="1188" y="-59"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -747,6 +754,9 @@
                                 <state key="normal" title="+">
                                     <color key="titleColor" red="0.396078431372549" green="0.49803921568627452" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="newSearchPressed" destination="BYZ-38-t0r" eventType="touchUpInside" id="sYX-fZ-cEg"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -1020,6 +1030,195 @@
             </objects>
             <point key="canvasLocation" x="1579" y="629"/>
         </scene>
+        <!--Search View Controller-->
+        <scene sceneID="JI0-5Q-tLJ">
+            <objects>
+                <viewController storyboardIdentifier="searchVC" id="Pav-NT-sIM" customClass="SearchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="WGQ-mR-Ep2"/>
+                        <viewControllerLayoutGuide type="bottom" id="KFa-3S-ij7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="iHX-wY-qz5">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile.png" translatesAutoresizingMaskIntoConstraints="NO" id="3od-fw-kRJ">
+                                <rect key="frame" x="85" y="120" width="150" height="150"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="hIC-mq-2VW"/>
+                                    <constraint firstAttribute="width" secondItem="3od-fw-kRJ" secondAttribute="height" multiplier="1:1" id="xt6-rx-nNS"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="274-mr-Nxz">
+                                <rect key="frame" x="0.0" y="290" width="320" height="168"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ONr-qk-HgS">
+                                        <rect key="frame" x="8" y="8" width="304" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="e7E-sy-uMM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RB-aO-g6P">
+                                        <rect key="frame" x="8" y="84" width="304" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="sAZ-Ah-X05"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-xq-Lxx">
+                                        <rect key="frame" x="8" y="119" width="304" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="NMj-lH-oWP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiU-ah-6Oq">
+                                        <rect key="frame" x="8" y="46" width="304" height="30"/>
+                                        <animations/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="ff0-Os-dFD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <animations/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.63921568630000003" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="9RB-aO-g6P" firstAttribute="centerX" secondItem="SiU-ah-6Oq" secondAttribute="centerX" id="0GL-FG-Ygn"/>
+                                    <constraint firstItem="gkJ-xq-Lxx" firstAttribute="width" secondItem="9RB-aO-g6P" secondAttribute="width" id="35n-RQ-72f"/>
+                                    <constraint firstItem="ONr-qk-HgS" firstAttribute="leading" secondItem="274-mr-Nxz" secondAttribute="leading" constant="8" id="4E2-P0-yab"/>
+                                    <constraint firstAttribute="trailing" secondItem="ONr-qk-HgS" secondAttribute="trailing" constant="8" id="9Ds-Du-4O3"/>
+                                    <constraint firstItem="gkJ-xq-Lxx" firstAttribute="centerX" secondItem="9RB-aO-g6P" secondAttribute="centerX" id="Atf-VH-VOg"/>
+                                    <constraint firstAttribute="height" constant="200" id="JEh-Cp-nMl"/>
+                                    <constraint firstItem="SiU-ah-6Oq" firstAttribute="top" secondItem="ONr-qk-HgS" secondAttribute="bottom" constant="8" id="Ubw-h1-H2A"/>
+                                    <constraint firstItem="ONr-qk-HgS" firstAttribute="top" secondItem="274-mr-Nxz" secondAttribute="top" constant="8" id="Y5c-OV-aXn"/>
+                                    <constraint firstItem="gkJ-xq-Lxx" firstAttribute="top" secondItem="9RB-aO-g6P" secondAttribute="bottom" constant="5" id="fHV-WJ-JkN"/>
+                                    <constraint firstItem="9RB-aO-g6P" firstAttribute="width" secondItem="SiU-ah-6Oq" secondAttribute="width" id="iic-Wm-AAF"/>
+                                    <constraint firstItem="SiU-ah-6Oq" firstAttribute="width" secondItem="ONr-qk-HgS" secondAttribute="width" id="lZt-Le-Mbq"/>
+                                    <constraint firstItem="SiU-ah-6Oq" firstAttribute="centerX" secondItem="ONr-qk-HgS" secondAttribute="centerX" id="xYv-X4-iMq"/>
+                                    <constraint firstItem="9RB-aO-g6P" firstAttribute="top" secondItem="SiU-ah-6Oq" secondAttribute="bottom" constant="8" id="yjP-QS-mUs"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="JEh-Cp-nMl"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Omh-ol-TEc">
+                                <rect key="frame" x="20" y="20" width="65" height="65"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.63921568630000003" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Omh-ol-TEc" secondAttribute="height" multiplier="1:1" id="1ci-3a-4CR"/>
+                                    <constraint firstAttribute="width" constant="65" id="zn8-7X-tu1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="50"/>
+                                <state key="normal" title="&lt;">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonPressed" destination="Pav-NT-sIM" eventType="touchUpInside" id="lc6-Lk-Z9r"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9iT-FM-bHR">
+                                <rect key="frame" x="235" y="483" width="65" height="65"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.0" green="0.76075000000000004" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="dhG-WO-WIh"/>
+                                    <constraint firstAttribute="width" secondItem="9iT-FM-bHR" secondAttribute="height" multiplier="1:1" id="oSb-7V-UO2"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="50"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="oSb-7V-UO2"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="acceptPressed" destination="Pav-NT-sIM" eventType="touchUpInside" id="Mei-Ti-LtS"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NgX-62-vUm">
+                                <rect key="frame" x="20" y="483" width="65" height="65"/>
+                                <animations/>
+                                <color key="backgroundColor" red="0.99215686270000003" green="0.21412500000000001" blue="0.098039215690000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NgX-62-vUm" secondAttribute="height" multiplier="1:1" id="4bg-lz-IAu"/>
+                                    <constraint firstAttribute="width" constant="65" id="toZ-Sx-Ryb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="50"/>
+                                <state key="normal" title="X">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="4bg-lz-IAu"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <action selector="rejectPressed" destination="Pav-NT-sIM" eventType="touchUpInside" id="DVP-qi-oQx"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Omh-ol-TEc" firstAttribute="width" secondItem="Omh-ol-TEc" secondAttribute="height" multiplier="1:1" id="6Op-0U-SiF"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Omh-ol-TEc" secondAttribute="leading" constant="-4" id="9Tr-1z-wX7"/>
+                            <constraint firstItem="3od-fw-kRJ" firstAttribute="centerX" secondItem="iHX-wY-qz5" secondAttribute="centerX" id="9gW-EZ-QVd"/>
+                            <constraint firstItem="Omh-ol-TEc" firstAttribute="top" secondItem="WGQ-mR-Ep2" secondAttribute="bottom" id="ANU-pR-cpY"/>
+                            <constraint firstItem="KFa-3S-ij7" firstAttribute="top" secondItem="Omh-ol-TEc" secondAttribute="bottom" constant="20" id="Ku4-0a-ehm"/>
+                            <constraint firstItem="3od-fw-kRJ" firstAttribute="top" secondItem="WGQ-mR-Ep2" secondAttribute="bottom" constant="100" id="MAh-Pl-lmz"/>
+                            <constraint firstItem="274-mr-Nxz" firstAttribute="leading" secondItem="iHX-wY-qz5" secondAttribute="leading" id="Qqo-P6-p7m"/>
+                            <constraint firstItem="NgX-62-vUm" firstAttribute="width" secondItem="NgX-62-vUm" secondAttribute="height" multiplier="1:1" id="Qu3-DI-5SL"/>
+                            <constraint firstItem="274-mr-Nxz" firstAttribute="top" secondItem="3od-fw-kRJ" secondAttribute="bottom" constant="20" id="TZP-cL-yEm"/>
+                            <constraint firstAttribute="trailing" secondItem="274-mr-Nxz" secondAttribute="trailing" id="XYZ-ls-exv"/>
+                            <constraint firstItem="NgX-62-vUm" firstAttribute="leading" secondItem="iHX-wY-qz5" secondAttribute="leadingMargin" constant="4" id="Z7F-af-Sjt"/>
+                            <constraint firstItem="KFa-3S-ij7" firstAttribute="top" secondItem="NgX-62-vUm" secondAttribute="bottom" constant="20" id="fyF-Z4-QIJ"/>
+                            <constraint firstItem="KFa-3S-ij7" firstAttribute="top" secondItem="274-mr-Nxz" secondAttribute="bottom" constant="110" id="jAD-nK-KGw"/>
+                            <constraint firstItem="9iT-FM-bHR" firstAttribute="width" secondItem="9iT-FM-bHR" secondAttribute="height" multiplier="1:1" id="jeV-N5-pu1"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9iT-FM-bHR" secondAttribute="trailing" constant="4" id="lG9-I7-0dS"/>
+                            <constraint firstItem="KFa-3S-ij7" firstAttribute="top" secondItem="9iT-FM-bHR" secondAttribute="bottom" constant="20" id="nJS-Nt-Dbi"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="6Op-0U-SiF"/>
+                                <exclude reference="Ku4-0a-ehm"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="acceptButton" destination="9iT-FM-bHR" id="33t-nX-hFn"/>
+                        <outlet property="backButton" destination="Omh-ol-TEc" id="vy7-W7-7bn"/>
+                        <outlet property="intensityLabel" destination="gkJ-xq-Lxx" id="p2M-JV-xyb"/>
+                        <outlet property="nameLabel" destination="ONr-qk-HgS" id="6Sh-jc-3Hg"/>
+                        <outlet property="profilePicture" destination="3od-fw-kRJ" id="odX-lP-ldU"/>
+                        <outlet property="rejectButton" destination="NgX-62-vUm" id="z0O-Hr-NcA"/>
+                        <outlet property="timeLabel" destination="9RB-aO-g6P" id="ehV-Q7-w2u"/>
+                        <outlet property="workoutTypeLabel" destination="SiU-ah-6Oq" id="cRW-sY-kNb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1yd-uO-Waq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1584" y="-59"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="zQK-YJ-t5a">
             <objects>
@@ -1043,5 +1242,6 @@
     </scenes>
     <resources>
         <image name="LaunchIcon" width="512" height="512"/>
+        <image name="profile.png" width="250" height="250"/>
     </resources>
 </document>
