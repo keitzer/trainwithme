@@ -244,23 +244,7 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "125"
-            endingLineNumber = "125"
-            landmarkName = "-runAlgorithm"
-            landmarkType = "5">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "163"
@@ -276,11 +260,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "206"
-            endingLineNumber = "206"
+            startingLineNumber = "201"
+            endingLineNumber = "201"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -292,11 +276,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "208"
-            endingLineNumber = "208"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -308,11 +292,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "216"
-            endingLineNumber = "216"
+            startingLineNumber = "246"
+            endingLineNumber = "246"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -324,11 +308,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "215"
-            endingLineNumber = "215"
+            startingLineNumber = "254"
+            endingLineNumber = "254"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -340,11 +324,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "212"
-            endingLineNumber = "212"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -356,11 +340,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "217"
-            endingLineNumber = "217"
+            startingLineNumber = "250"
+            endingLineNumber = "250"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -372,11 +356,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
+            startingLineNumber = "255"
+            endingLineNumber = "255"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -388,11 +372,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "191"
-            endingLineNumber = "191"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -404,11 +388,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292245.569153"
+            timestampString = "469295719.883203"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "143"
-            endingLineNumber = "143"
+            startingLineNumber = "229"
+            endingLineNumber = "229"
             landmarkName = "-runAlgorithm"
             landmarkType = "5">
          </BreakpointContent>
@@ -420,12 +404,108 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "TrainWithMe/SearchViewController.m"
-            timestampString = "469292352.49254"
+            timestampString = "469295719.883203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-runAlgorithm"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrainWithMe/SearchViewController.m"
+            timestampString = "469295719.883203"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "125"
+            endingLineNumber = "125"
+            landmarkName = "-rejectPressed"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrainWithMe/SearchViewController.m"
+            timestampString = "469294892.690741"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "89"
+            endingLineNumber = "89"
+            landmarkName = "-acceptPressed"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrainWithMe/SearchViewController.m"
+            timestampString = "469294313.00953"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "84"
+            endingLineNumber = "84"
+            landmarkName = "-acceptPressed"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SearchViewController acceptPressed]"
+                  moduleName = "TrainWithMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/KeitZer/TrainWithMe/TrainWithMe/SearchViewController.m"
+                  timestampString = "469295100.087627"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "734">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[SearchViewController acceptPressed]"
+                  moduleName = "TrainWithMe"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/KeitZer/TrainWithMe/TrainWithMe/SearchViewController.m"
+                  timestampString = "469295100.087946"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "84"
+                  endingLineNumber = "84"
+                  offsetFromSymbolStart = "752">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "TrainWithMe/SearchViewController.m"
+            timestampString = "469295111.973614"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "87"
             endingLineNumber = "87"
-            landmarkName = "-rejectPressed"
+            landmarkName = "-acceptPressed"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>

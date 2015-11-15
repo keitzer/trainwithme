@@ -68,7 +68,41 @@
 }
 
 -(IBAction)acceptPressed {
-	//[SVProgressHUD showImage:[UIImage imageNamed:@"LaunchIcon"] status:@"You've Been Matched!"];
+	
+	if (self.counter >= self.usersToShow.count) {
+		return;
+	}
+	
+	PFUser *currentUser = [PFUser currentUser];
+	NSMutableArray *myAccepted = [currentUser[@"accepted"] mutableCopy];
+	if (!myAccepted) {
+		myAccepted = [[NSMutableArray alloc] init];
+	}
+	[myAccepted addObject:((PFUser*)(self.usersToShow[self.counter])).objectId];
+	currentUser[@"accepted"] = myAccepted;
+	
+	for (NSString *otherID in self.usersToShow[self.counter][@"accepted"]) {
+		if ([otherID isEqualToString:currentUser.objectId]) {
+			//move both to friends;
+			PFUser *user = (PFUser*)self.usersToShow[self.counter];
+			
+			NSMutableArray *myFriends = currentUser[@"friends"];
+			if (!myFriends) {
+				myFriends = [[NSMutableArray alloc] init];
+			}
+			[myFriends addObject:user.objectId];
+			currentUser[@"friends"] = myFriends;
+			
+			[currentUser saveInBackground];
+			
+			[SVProgressHUD showImage:[UIImage imageNamed:@"LaunchIcon"] status:@"You've Been Matched!"];
+		}
+	}
+	
+	[currentUser saveInBackground];
+	
+	
+	
 	++self.counter;
 	if (self.counter >= self.usersToShow.count) {
 		[self alertWithTitle:@"No More Users!" andMessage:@"You went through everyone on the app. Go work out!"];
@@ -79,6 +113,10 @@
 }
 
 -(IBAction)rejectPressed {
+	if (self.counter >= self.usersToShow.count) {
+		return;
+	}
+	
 	PFUser *currentUser = [PFUser currentUser];
 	NSMutableArray *myRejected = [currentUser[@"rejected"] mutableCopy];
 	if (!myRejected) {
@@ -219,6 +257,10 @@
 }
 
 -(void)showNextUser {
+	if (self.counter >= self.usersToShow.count) {
+		return;
+	}
+	
 	self.nameLabel.text = self.usersToShow[self.counter][@"name"];
 	
 	NSString *intensityString = ([self.usersToShow[self.counter][@"intensities"] count] > 0) ? self.usersToShow[self.counter][@"intensities"][0] : @"";
