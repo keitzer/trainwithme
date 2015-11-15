@@ -11,6 +11,7 @@
 #import "BuddyTableViewCell.h"
 #import "AccountViewController.h"
 #import <Parse/Parse.h>
+#import "Color.h"
 
 @interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, AccountVCDelegate>
 @property (nonatomic, strong) NSMutableArray *buddyArray;
@@ -24,7 +25,7 @@
 	
 	self.buddyArray = [[NSMutableArray alloc] init];
 	self.navigationItem.title = @"TrainWithMe";
-	
+	self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
@@ -74,20 +75,6 @@
 	
 }
 
-- (void)didReceiveMemoryWarning {
-	[super didReceiveMemoryWarning];
-	// Dispose of any resources that can be recreated.
-}
-
--(BOOL)textFieldShouldReturn:(UITextField *)textField {
-	
-	PFObject *gym = [PFObject objectWithClassName:@"Gym"];
-	gym[@"Name"] = textField.text;
-	[gym saveInBackground];
-	
-	return YES;
-}
-
 -(void)presentWelcomeVC {
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	WelcomeViewController *welcomeVC = [storyboard instantiateViewControllerWithIdentifier:@"welcomeVC"];
@@ -130,6 +117,8 @@
 	BuddyTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
 	[cell setName:self.buddyArray[indexPath.row][@"name"]];
 	[cell setPicture:[UIImage imageNamed:@"profile.png"]];
+	cell.backgroundColor = (indexPath.row %2 == 0) ? [UIColor colorBlue] : [UIColor colorDarkBlue];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
 	
 	return cell;
 }

@@ -11,6 +11,7 @@
 @interface UIColor (Train)
 
 + (UIColor*)colorBlue;
++ (UIColor*)colorDarkBlue;
 + (UIColor*)colorRed;
 + (UIColor*)colorOrange;
 + (UIColor*)colorTeal;

@@ -14,6 +14,10 @@
 	return [UIColor colorWithHexString:@"657FFF"];
 }
 
++(UIColor *)colorDarkBlue {
+	return [UIColor colorWithHexString:@"5e76ed"];
+}
+
 +(UIColor *)colorRed {
 	return [UIColor colorWithHexString:@"F55971"];
 }

@@ -17,7 +17,6 @@
 
 - (void)awakeFromNib {
     // Initialization code
-	self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width/2;
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
@@ -35,6 +34,8 @@
 }
 
 -(void)setPicture:(UIImage *)image {
+	self.profilePicture.layer.masksToBounds = YES;
+	self.profilePicture.layer.cornerRadius = self.profilePicture.frame.size.width/2;
 	self.profilePicture.image = image;
 }
 

@@ -32,6 +32,7 @@
 	
 	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
 	[self.view addGestureRecognizer:self.tapper];
+	self.navigationController.navigationBar.barTintColor = [UIColor blueColor];
 }
 
 - (void)hideKeyboard {
@@ -41,7 +42,7 @@
 -(void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
-	[[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
+	//[[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
 	[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
