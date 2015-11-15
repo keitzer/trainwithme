@@ -434,6 +434,7 @@
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="activityButton" destination="R1e-I7-UtS" id="CnM-jv-VvE"/>
+                        <outlet property="intensityButton" destination="yOP-3l-rMW" id="Z7u-sQ-iS9"/>
                         <outlet property="locationButton" destination="Teh-2q-zqh" id="3P8-8Y-TSI"/>
                         <outlet property="nameTextField" destination="KsP-1d-fTy" id="omk-wF-rzb"/>
                         <outlet property="timeButton" destination="Adp-Lw-2qk" id="Rp1-Mo-8h6"/>
@@ -552,7 +553,7 @@
         <scene sceneID="qbL-0R-S6e">
             <objects>
                 <tableViewController storyboardIdentifier="activityVC" id="HJH-zs-obl" customClass="ActivityTableViewController" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ILA-yN-X9q">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="ILA-yN-X9q">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <animations/>

@@ -19,6 +19,8 @@
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;
 @property (nonatomic, weak) IBOutlet UIButton *timeButton;
 @property (nonatomic, strong) UITapGestureRecognizer *tapper;
+
+@property (nonatomic, strong) NSMutableArray *activityArray;
 @end
 
 @implementation AccountViewController
@@ -32,6 +34,7 @@
 	PFUser *currentUser = [PFUser currentUser];
 	self.nameTextField.text = currentUser[@"name"];
 	self.weightTextField.text = [NSString stringWithFormat:@"%zd", [currentUser[@"weight"] integerValue]];
+	self.activityArray = currentUser[@"activities"];
 	[self updateActivityButtonText];
 	
 	
@@ -49,6 +52,13 @@
 	PFUser *currentUser = [PFUser currentUser];
 	currentUser[@"name"] = [self.nameTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 	currentUser[@"weight"] = @([[self.weightTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]] integerValue]);
+	
+	NSMutableArray *activityNames = [[NSMutableArray alloc] init];
+	for (NSDictionary *activity in self.activityArray) {
+		[activityNames addObject:activity[@"name"]];
+	}
+	
+	currentUser[@"activities"] = activityNames;
 	
 	[currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		
@@ -77,17 +87,16 @@
 }
 
 -(void)updateActivityButtonText {
-	PFUser *currentUser = [PFUser currentUser];
 	
 	NSString *activityString = @"";
-	if ([currentUser[@"activities"] count] > 2) {
-		activityString = [NSString stringWithFormat:@"%zd Activities", [currentUser[@"activities"] count]];
+	if ([self.activityArray count] > 2) {
+		activityString = [NSString stringWithFormat:@"%zd Activities", [self.activityArray count]];
 	}
-	else if ([currentUser[@"activities"] count] == 2) {
-		activityString = [NSString stringWithFormat:@"%@, %@", currentUser[@"activites"][0], currentUser[@"activities"][1]];
+	else if ([self.activityArray count] == 2) {
+		activityString = [NSString stringWithFormat:@"%@, %@", self.activityArray[0][@"name"], self.activityArray[1][@"name"]];
 	}
-	else if ([currentUser[@"activities"] count] == 1) {
-		activityString = currentUser[@"activities"][0];
+	else if ([self.activityArray count] == 1) {
+		activityString = self.activityArray[0][@"name"];
 	}
 	else {
 		activityString = @"Tap to Choose Activities";
@@ -132,8 +141,7 @@
 }
 
 -(void)activityVCObjectsSelected:(NSArray *)objects {
-	PFUser *currentUser = [PFUser currentUser];
-	currentUser[@"activities"] = objects;
+	self.activityArray = [objects mutableCopy];
 	[self updateActivityButtonText];
 	
 	[self.navigationController popViewControllerAnimated:YES];

@@ -23,9 +23,12 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	self.activityTypes = [[NSMutableArray alloc] init];
+	[SVProgressHUD showWithStatus:@"Loading Activities..."];
 	
 	PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+		[SVProgressHUD dismiss];
+		
 		if (!error) {
 			for (PFObject *object in objects) {
 				NSDictionary *type = @{
@@ -77,44 +80,27 @@
     
     // Configure the cell...
 	cell.textLabel.text = self.activityTypes[indexPath.row][@"name"];
+	cell.selectionStyle = UITableViewCellSelectionStyleNone;
     
     return cell;
 }
 
-
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	BOOL checked = ![self.activityTypes[indexPath.row][@"checked"] boolValue];
+	self.activityTypes[indexPath.row] = @{
+										  @"name" : self.activityTypes[indexPath.row][@"name"],
+										  @"checked" : @(checked)
+										  };
+	
+	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+	
+	if (checked) {
+		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+	}
+	else {
+		cell.accessoryType = UITableViewCellAccessoryNone;
+	}
 }
-*/
-
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
-}
-*/
-
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 /*
 #pragma mark - Navigation
