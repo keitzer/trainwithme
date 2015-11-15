@@ -19,7 +19,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	// Do any additional setup after loading the view.
+	self.navigationItem.title = @"Log In";
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 -(IBAction)loginPressed {

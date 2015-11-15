@@ -46,6 +46,8 @@
 	[self updateActivityButtonText];
 	[self updateIntensityButtonText];
 	
+	self.navigationItem.title = @"Profile";
+	
 	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
 	[self.view addGestureRecognizer:self.tapper];
 }

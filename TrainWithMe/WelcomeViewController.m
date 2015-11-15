@@ -17,7 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+	// Do any additional setup after loading the view.
+	self.navigationItem.title = @"Welcome!";
+	[self.navigationController setNavigationBarHidden:YES animated:NO];
+}
+
+-(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	[self.navigationController setNavigationBarHidden:YES animated:NO];
 }
 
 - (void)didReceiveMemoryWarning {

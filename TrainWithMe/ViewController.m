@@ -23,6 +23,7 @@
 	[super viewDidLoad];
 	
 	self.buddyArray = [[NSMutableArray alloc] init];
+	self.navigationItem.title = @"TrainWithMe";
 	
 }
 
