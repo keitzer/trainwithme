@@ -14,6 +14,7 @@
 + (UIColor*)colorRed;
 + (UIColor*)colorOrange;
 + (UIColor*)colorTeal;
++ (UIColor*)colorDarkTeal;
 + (UIColor*)colorYellow;
 + (UIColor*)colorWithHexString:(NSString*)hex;
 @end

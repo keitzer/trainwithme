@@ -26,6 +26,10 @@
 	return [UIColor colorWithHexString:@"60E8B1"];
 }
 
++(UIColor *)colorDarkTeal {
+	return [UIColor colorWithHexString:@"59d6a3"];
+}
+
 +(UIColor *)colorYellow {
 	return [UIColor colorWithHexString:@"FFFA5D"];
 }

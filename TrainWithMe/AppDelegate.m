@@ -49,6 +49,8 @@
 	   }
 	 forState:UIControlStateNormal];
 	
+	[[UIApplication sharedApplication] setStatusBarStyle:UIStatusBarStyleLightContent];
+	
 	
 	return YES;
 }

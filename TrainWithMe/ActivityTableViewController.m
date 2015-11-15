@@ -9,6 +9,7 @@
 #import "ActivityTableViewController.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
+#import "Color.h"
 
 @interface ActivityTableViewController ()
 @property (nonatomic, strong) NSMutableArray *savedTypes; //array of strings (names)
@@ -29,7 +30,10 @@
 }
 
 - (void)viewDidLoad {
-    [super viewDidLoad];
+	[super viewDidLoad];
+	
+	self.navigationController.navigationBar.barTintColor = [UIColor colorTeal];
+	
 	self.activityTypes = [[NSMutableArray alloc] init];
 	
 	[SVProgressHUD showWithStatus:@"Loading Activities..."];
@@ -62,6 +66,7 @@
 			
 		}
 	}];
+	
 }
 
 #pragma mark - Table view data source
@@ -98,15 +103,21 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CELL" forIndexPath:indexPath];
     
     // Configure the cell...
+	cell.textLabel.font = [UIFont fontWithName:@"Comfortaa-Regular" size:18];
 	cell.textLabel.text = self.activityTypes[indexPath.row][@"name"];
+	cell.textLabel.textColor = [UIColor whiteColor];
 	cell.selectionStyle = UITableViewCellSelectionStyleNone;
+	
+	cell.backgroundColor = (indexPath.row % 2 == 0) ? [UIColor colorTeal] : [UIColor colorDarkTeal];
 	
 	BOOL checked = [self.activityTypes[indexPath.row][@"checked"] boolValue];
 	if (checked) {
-		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+		UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"coloredCheckmark.png"]];
+		checkmark.frame = CGRectMake(0, 0, 40, 40);
+		cell.accessoryView = checkmark;
 	}
 	else {
-		cell.accessoryType = UITableViewCellAccessoryNone;
+		cell.accessoryView = nil;
 	}
     
     return cell;
@@ -122,11 +133,17 @@
 	UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
 	
 	if (checked) {
-		cell.accessoryType = UITableViewCellAccessoryCheckmark;
+		UIImageView *checkmark = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"coloredCheckmark.png"]];
+		checkmark.frame = CGRectMake(0, 0, 40, 40);
+		cell.accessoryView = checkmark;
 	}
 	else {
-		cell.accessoryType = UITableViewCellAccessoryNone;
+		cell.accessoryView = nil;
 	}
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+	return 60;
 }
 
 /*

@@ -58,6 +58,12 @@
 	[self.view endEditing:YES];
 }
 
+-(void)viewWillAppear:(BOOL)animated {
+	[super viewWillAppear:animated];
+	
+	self.navigationController.navigationBar.barTintColor = [UIColor colorRed];
+}
+
 -(void)savePressed {
 	[SVProgressHUD showWithStatus:@"Saving..."];
 	
