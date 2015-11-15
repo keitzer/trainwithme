@@ -13,15 +13,17 @@
 @interface ActivityTableViewController ()
 @property (nonatomic, strong) NSMutableArray *savedTypes; //array of strings (names)
 @property (nonatomic, strong) NSMutableArray *activityTypes; //array of dictionaries
+@property (nonatomic, assign) BOOL isActivity;
 @end
 
 @implementation ActivityTableViewController
 
--(id)initWithSelectedTypes:(NSArray *)selectedObjects {
+-(id)initWithSelectedTypes:(NSArray *)selectedObjects asActivity:(BOOL)isActivity {
 	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
 	
 	ActivityTableViewController *vc = [storyboard instantiateViewControllerWithIdentifier:@"activityVC"];
 	vc.savedTypes = [selectedObjects mutableCopy];
+	vc.isActivity = isActivity;
 	
 	return vc;
 }
@@ -32,7 +34,15 @@
 	
 	[SVProgressHUD showWithStatus:@"Loading Activities..."];
 	
-	PFQuery *query = [PFQuery queryWithClassName:@"Activity"];
+	NSString *className = @"Activity";
+	if (!self.isActivity) {
+		className = @"Intensity";
+		self.navigationItem.title = @"Intensities";
+	}
+	else {
+		self.navigationItem.title = @"Activities";
+	}
+	PFQuery *query = [PFQuery queryWithClassName:className];
 	[query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
 		[SVProgressHUD dismiss];
 		
@@ -79,7 +89,7 @@
 			}
 		}
 		
-		[self.delegate activityVCObjectsSelected:self.savedTypes];
+		[self.delegate activityVCObjectsSelected:self.savedTypes asActivity:self.isActivity];
 	}
 }
 

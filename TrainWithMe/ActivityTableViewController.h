@@ -10,13 +10,13 @@
 
 @protocol ActivityVCDelegate <NSObject>
 
--(void)activityVCObjectsSelected:(NSArray*)objects;
+-(void)activityVCObjectsSelected:(NSArray*)objects asActivity:(BOOL)isActivity;
 -(void)activityVCCancelled;
 
 @end
 
 @interface ActivityTableViewController : UITableViewController
--(id)initWithSelectedTypes:(NSArray*)selectedObjects;
+-(id)initWithSelectedTypes:(NSArray*)selectedObjects asActivity:(BOOL)isActivity;
 
 @property (nonatomic, weak) id <ActivityVCDelegate> delegate;
 @end

@@ -21,6 +21,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *tapper;
 
 @property (nonatomic, strong) NSMutableArray *activityArray;
+@property (nonatomic, strong) NSMutableArray *intensityArray;
 @end
 
 @implementation AccountViewController
@@ -35,8 +36,15 @@
 	self.nameTextField.text = currentUser[@"name"];
 	self.weightTextField.text = [NSString stringWithFormat:@"%zd", [currentUser[@"weight"] integerValue]];
 	self.activityArray = currentUser[@"activities"];
+	self.intensityArray = currentUser[@"intensities"];
+	if (!self.activityArray) {
+		self.activityArray = [[NSMutableArray alloc] init];
+	}
+	if (!self.intensityArray) {
+		self.intensityArray = [[NSMutableArray alloc] init];
+	}
 	[self updateActivityButtonText];
-	
+	[self updateIntensityButtonText];
 	
 	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
 	[self.view addGestureRecognizer:self.tapper];
@@ -54,6 +62,7 @@
 	currentUser[@"weight"] = @([[self.weightTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]] integerValue]);
 	
 	currentUser[@"activities"] = self.activityArray;
+	currentUser[@"intensities"] = self.intensityArray;
 	
 	[currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		
@@ -99,6 +108,23 @@
 	[self.activityButton setTitle:activityString forState:UIControlStateNormal];
 }
 
+-(void)updateIntensityButtonText {
+	NSString *intensityString = @"";
+	if ([self.intensityArray count] > 2) {
+		intensityString = [NSString stringWithFormat:@"%zd Intensities", [self.intensityArray count]];
+	}
+	else if ([self.intensityArray count] == 2) {
+		intensityString = [NSString stringWithFormat:@"%@, %@", self.intensityArray[0], self.intensityArray[1]];
+	}
+	else if ([self.intensityArray count] == 1) {
+		intensityString = self.intensityArray[0];
+	}
+	else {
+		intensityString = @"Tap to Choose Intensities";
+	}
+	[self.intensityButton setTitle:intensityString forState:UIControlStateNormal];
+}
+
 -(void)cancelPressed {
 	if (self.delegate) {
 		[self.delegate accountVCCancelled];
@@ -112,13 +138,15 @@
 }
 
 -(IBAction)activityPressed {
-	ActivityTableViewController *activityVC = [[ActivityTableViewController alloc] initWithSelectedTypes:self.activityArray];
+	ActivityTableViewController *activityVC = [[ActivityTableViewController alloc] initWithSelectedTypes:self.activityArray asActivity:YES];
 	activityVC.delegate = self;
 	[self.navigationController pushViewController:activityVC animated:YES];
 }
 
 -(IBAction)intensityPressed {
-	NSLog(@"intensity pressed");
+	ActivityTableViewController *intensityVC = [[ActivityTableViewController alloc] initWithSelectedTypes:self.intensityArray asActivity:NO];
+	intensityVC.delegate = self;
+	[self.navigationController pushViewController:intensityVC animated:YES];
 }
 
 -(IBAction)locationPressed {
@@ -134,9 +162,15 @@
 	[self.navigationController popViewControllerAnimated:YES];
 }
 
--(void)activityVCObjectsSelected:(NSArray *)objects {
-	self.activityArray = [objects mutableCopy];
-	[self updateActivityButtonText];
+-(void)activityVCObjectsSelected:(NSArray *)objects asActivity:(BOOL)isActivity {
+	if (isActivity) {
+		self.activityArray = [objects mutableCopy];
+		[self updateActivityButtonText];
+	}
+	else {
+		self.intensityArray = [objects mutableCopy];
+		[self updateIntensityButtonText];
+	}
 	
 	[self.navigationController popViewControllerAnimated:YES];
 }
