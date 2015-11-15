@@ -9,11 +9,13 @@
 #import "AccountViewController.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
+#import "ActivityTableViewController.h"
 
-@interface AccountViewController ()
+@interface AccountViewController () <ActivityVCDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *weightTextField;
 @property (nonatomic, weak) IBOutlet UIButton *activityButton;
+@property (nonatomic, weak) IBOutlet UIButton *intensityButton;
 @property (nonatomic, weak) IBOutlet UIButton *locationButton;
 @property (nonatomic, weak) IBOutlet UIButton *timeButton;
 @property (nonatomic, strong) UITapGestureRecognizer *tapper;
@@ -30,20 +32,7 @@
 	PFUser *currentUser = [PFUser currentUser];
 	self.nameTextField.text = currentUser[@"name"];
 	self.weightTextField.text = [NSString stringWithFormat:@"%zd", [currentUser[@"weight"] integerValue]];
-	NSString *activityString = @"";
-	if ([currentUser[@"activities"] count] > 2) {
-		activityString = [NSString stringWithFormat:@"%zd Activities", [currentUser[@"activities"] count]];
-	}
-	else if ([currentUser[@"activities"] count] == 2) {
-		activityString = [NSString stringWithFormat:@"%@, %@", currentUser[@"activites"][0], currentUser[@"activities"][1]];
-	}
-	else if ([currentUser[@"activities"] count] == 1) {
-		activityString = currentUser[@"activities"][0];
-	}
-	else {
-		activityString = @"Tap to Choose Activities";
-	}
-	[self.activityButton setTitle:activityString forState:UIControlStateNormal];
+	[self updateActivityButtonText];
 	
 	
 	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
@@ -87,6 +76,25 @@
 	
 }
 
+-(void)updateActivityButtonText {
+	PFUser *currentUser = [PFUser currentUser];
+	
+	NSString *activityString = @"";
+	if ([currentUser[@"activities"] count] > 2) {
+		activityString = [NSString stringWithFormat:@"%zd Activities", [currentUser[@"activities"] count]];
+	}
+	else if ([currentUser[@"activities"] count] == 2) {
+		activityString = [NSString stringWithFormat:@"%@, %@", currentUser[@"activites"][0], currentUser[@"activities"][1]];
+	}
+	else if ([currentUser[@"activities"] count] == 1) {
+		activityString = currentUser[@"activities"][0];
+	}
+	else {
+		activityString = @"Tap to Choose Activities";
+	}
+	[self.activityButton setTitle:activityString forState:UIControlStateNormal];
+}
+
 -(void)cancelPressed {
 	if (self.delegate) {
 		[self.delegate accountVCCancelled];
@@ -100,7 +108,14 @@
 }
 
 -(IBAction)activityPressed {
-	NSLog(@"activity pressed");
+	UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+	ActivityTableViewController *activityVC = [storyboard instantiateViewControllerWithIdentifier:@"activityVC"];
+	activityVC.delegate = self;
+	[self.navigationController pushViewController:activityVC animated:YES];
+}
+
+-(IBAction)intensityPressed {
+	NSLog(@"intensity pressed");
 }
 
 -(IBAction)locationPressed {
@@ -109,6 +124,19 @@
 
 -(IBAction)timePressed {
 	NSLog(@"time pressed");
+}
+
+
+-(void)activityVCCancelled {
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)activityVCObjectsSelected:(NSArray *)objects {
+	PFUser *currentUser = [PFUser currentUser];
+	currentUser[@"activities"] = objects;
+	[self updateActivityButtonText];
+	
+	[self.navigationController popViewControllerAnimated:YES];
 }
 
 /*

@@ -39,6 +39,7 @@
 		FEA04CCA1BF81229004ACC93 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEA04CC41BF81228004ACC93 /* SVProgressHUD.bundle */; };
 		FEA04CCB1BF81229004ACC93 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04CC61BF81229004ACC93 /* SVProgressHUD.m */; };
 		FEA04CCC1BF81229004ACC93 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04CC81BF81229004ACC93 /* SVRadialGradientLayer.m */; };
+		FEA04CCF1BF81CFE004ACC93 /* ActivityTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04CCE1BF81CFE004ACC93 /* ActivityTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		FEA04CC61BF81229004ACC93 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
 		FEA04CC71BF81229004ACC93 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
 		FEA04CC81BF81229004ACC93 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+		FEA04CCD1BF81CFE004ACC93 /* ActivityTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActivityTableViewController.h; sourceTree = "<group>"; };
+		FEA04CCE1BF81CFE004ACC93 /* ActivityTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ActivityTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				FEA04CB31BF7D838004ACC93 /* SignUpViewController.m */,
 				FEA04CB51BF7D94F004ACC93 /* LoginViewController.h */,
 				FEA04CB61BF7D94F004ACC93 /* LoginViewController.m */,
+				FEA04CCD1BF81CFE004ACC93 /* ActivityTableViewController.h */,
+				FEA04CCE1BF81CFE004ACC93 /* ActivityTableViewController.m */,
 				FE1595121BF7CDDA008670B4 /* Main.storyboard */,
 				FE1595151BF7CDDA008670B4 /* Assets.xcassets */,
 				FE1595171BF7CDDA008670B4 /* LaunchScreen.storyboard */,
@@ -388,6 +393,7 @@
 				FEA04CB41BF7D838004ACC93 /* SignUpViewController.m in Sources */,
 				FEA04CC91BF81229004ACC93 /* SVIndefiniteAnimatedView.m in Sources */,
 				FEA04CB71BF7D94F004ACC93 /* LoginViewController.m in Sources */,
+				FEA04CCF1BF81CFE004ACC93 /* ActivityTableViewController.m in Sources */,
 				FEA04CBA1BF7E931004ACC93 /* BuddyTableViewCell.m in Sources */,
 				FEA04CB11BF7D60C004ACC93 /* WelcomeViewController.m in Sources */,
 				FE15950E1BF7CDDA008670B4 /* AppDelegate.m in Sources */,

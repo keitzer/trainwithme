@@ -13,8 +13,6 @@
 #import <Parse/Parse.h>
 
 @interface ViewController () <UITextFieldDelegate, UITableViewDelegate, UITableViewDataSource, AccountVCDelegate>
-@property (nonatomic, weak) IBOutlet UILabel *nameLabel;
-@property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, strong) NSMutableArray *buddyArray;
 @property (nonatomic, weak) IBOutlet UITableView *tableView;
 @end
@@ -23,8 +21,6 @@
 
 - (void)viewDidLoad {
 	[super viewDidLoad];
-	
-	self.nameLabel.text = @"Alex";
 	
 	self.buddyArray = [[NSMutableArray alloc] init];
 	
