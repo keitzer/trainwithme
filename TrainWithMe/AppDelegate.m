@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
+#import "Color.h"
 
 @interface AppDelegate ()
 
@@ -38,8 +39,8 @@
 		[[UINavigationBar appearance] setTranslucent:NO];
 	}
 	[[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
-	[[UITextField appearance] setTintColor:[UIColor colorWithRed:245/255.f green:89/255.f blue:113/255.f alpha:1]];
-	[[UITextView appearance] setTintColor:[UIColor colorWithRed:245/255.f green:89/255.f blue:113/255.f alpha:1]];
+	[[UITextField appearance] setTintColor:[UIColor whiteColor]];
+	[[UITextView appearance] setTintColor:[UIColor whiteColor]];
 	
 	[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
 	 setTitleTextAttributes:

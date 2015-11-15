@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
 #import "ActivityTableViewController.h"
+#import "Color.h"
 
 @interface AccountViewController () <ActivityVCDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
@@ -50,6 +51,7 @@
 	
 	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
 	[self.view addGestureRecognizer:self.tapper];
+	[[UINavigationBar appearance] setBarTintColor:[UIColor colorRed]];
 }
 
 - (void)hideKeyboard {
