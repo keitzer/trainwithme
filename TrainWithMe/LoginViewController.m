@@ -9,10 +9,12 @@
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
+#import "Color.h"
 
 @interface LoginViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
+@property (nonatomic, strong) UITapGestureRecognizer *tapper;
 @end
 
 @implementation LoginViewController
@@ -21,16 +23,30 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
 	self.navigationItem.title = @"Log In";
+	if ([self.usernameTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+		self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+	}
+	if ([self.passwordTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+		self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor lightGrayColor]}];
+	}
+	
+	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+	[self.view addGestureRecognizer:self.tapper];
+}
+
+- (void)hideKeyboard {
+	[self.view endEditing:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
+	[[UINavigationBar appearance] setBarTintColor:[UIColor blueColor]];
 	[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
 -(IBAction)loginPressed {
-	[SVProgressHUD showWithStatus:@"Loggin In..."];
+	[SVProgressHUD showWithStatus:@"Logging In..."];
 	
 	[PFUser logInWithUsernameInBackground:self.usernameTextField.text
 								 password:self.passwordTextField.text

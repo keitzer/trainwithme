@@ -23,10 +23,30 @@
 	[Parse setApplicationId:@"Wmgt9TmgJIxFgupu4BDhUzKQCCElRIiSYutk5ypA"
 				  clientKey:@"HsRD4EIfbxQJcxmpBKRfUx2YwhnsEWheZgldTGJd"];
 	
-	[SVProgressHUD setFont:[UIFont fontWithName:@"Arial" size:20]];
+	[SVProgressHUD setFont:[UIFont fontWithName:@"Comfortaa-Bold" size:24]];
 	[SVProgressHUD setRingThickness:5];
 	[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
-	[SVProgressHUD setForegroundColor:[UIColor colorWithRed:74/255.f green:193/255.f blue:71/255.1 alpha:1]];
+	[SVProgressHUD setDefaultStyle:SVProgressHUDStyleCustom];
+	[SVProgressHUD setBackgroundColor:[UIColor colorWithRed:245/255.f green:89/255.f blue:113/255.f alpha:1]];
+	[SVProgressHUD setForegroundColor:[UIColor whiteColor]];
+	
+	[[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
+	[[UINavigationBar appearance] setTitleTextAttributes: @{NSForegroundColorAttributeName:[UIColor whiteColor],NSFontAttributeName:[UIFont fontWithName:@"Comfortaa-Bold" size:24]}];
+	
+	//this Transluscent nav bar crap is only on iOS 8+... it'll crash pre-8
+	if([UIDevice currentDevice].systemVersion.floatValue >= 8.0) {
+		[[UINavigationBar appearance] setTranslucent:NO];
+	}
+	[[UINavigationBar appearance] setBarTintColor:[UIColor whiteColor]];
+	[[UITextField appearance] setTintColor:[UIColor colorWithRed:245/255.f green:89/255.f blue:113/255.f alpha:1]];
+	[[UITextView appearance] setTintColor:[UIColor colorWithRed:245/255.f green:89/255.f blue:113/255.f alpha:1]];
+	
+	[[UIBarButtonItem appearanceWhenContainedIn:[UINavigationBar class], nil]
+	 setTitleTextAttributes:
+	 @{NSForegroundColorAttributeName:[UIColor whiteColor],
+	   NSFontAttributeName:[UIFont fontWithName:@"Comfortaa-Regular" size:16]
+	   }
+	 forState:UIControlStateNormal];
 	
 	
 	return YES;

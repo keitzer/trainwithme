@@ -64,6 +64,8 @@
 		FEA04CFD1BF82E66004ACC93 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA04CEB1BF82E66004ACC93 /* Icon.png */; };
 		FEA04CFE1BF82E66004ACC93 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA04CEC1BF82E66004ACC93 /* Icon@2x.png */; };
 		FEA04D001BF83081004ACC93 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA04CFF1BF83081004ACC93 /* iTunesArtwork@2x.png */; };
+		FEA04D031BF84DFD004ACC93 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04D021BF84DFD004ACC93 /* Constants.m */; };
+		FEA04D061BF84E74004ACC93 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04D051BF84E74004ACC93 /* Color.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +161,10 @@
 		FEA04CEB1BF82E66004ACC93 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		FEA04CEC1BF82E66004ACC93 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		FEA04CFF1BF83081004ACC93 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		FEA04D011BF84DFD004ACC93 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		FEA04D021BF84DFD004ACC93 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
+		FEA04D041BF84E74004ACC93 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		FEA04D051BF84E74004ACC93 /* Color.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Color.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -261,6 +267,10 @@
 				FEA04CB61BF7D94F004ACC93 /* LoginViewController.m */,
 				FEA04CCD1BF81CFE004ACC93 /* ActivityTableViewController.h */,
 				FEA04CCE1BF81CFE004ACC93 /* ActivityTableViewController.m */,
+				FEA04D011BF84DFD004ACC93 /* Constants.h */,
+				FEA04D021BF84DFD004ACC93 /* Constants.m */,
+				FEA04D041BF84E74004ACC93 /* Color.h */,
+				FEA04D051BF84E74004ACC93 /* Color.m */,
 				FE1595121BF7CDDA008670B4 /* Main.storyboard */,
 				FE1595151BF7CDDA008670B4 /* Assets.xcassets */,
 				FE1595171BF7CDDA008670B4 /* LaunchScreen.storyboard */,
@@ -494,12 +504,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE1595111BF7CDDA008670B4 /* ViewController.m in Sources */,
+				FEA04D061BF84E74004ACC93 /* Color.m in Sources */,
 				FEA04CB41BF7D838004ACC93 /* SignUpViewController.m in Sources */,
 				FEA04CC91BF81229004ACC93 /* SVIndefiniteAnimatedView.m in Sources */,
 				FEA04CB71BF7D94F004ACC93 /* LoginViewController.m in Sources */,
 				FEA04CCF1BF81CFE004ACC93 /* ActivityTableViewController.m in Sources */,
 				FEA04CBA1BF7E931004ACC93 /* BuddyTableViewCell.m in Sources */,
 				FEA04CB11BF7D60C004ACC93 /* WelcomeViewController.m in Sources */,
+				FEA04D031BF84DFD004ACC93 /* Constants.m in Sources */,
 				FE15950E1BF7CDDA008670B4 /* AppDelegate.m in Sources */,
 				FEA04CCB1BF81229004ACC93 /* SVProgressHUD.m in Sources */,
 				FEA04CBF1BF80347004ACC93 /* AccountViewController.m in Sources */,
@@ -650,6 +662,7 @@
 					"$(PROJECT_DIR)/TrainWithMe",
 				);
 				INFOPLIST_FILE = TrainWithMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackathon.TrainWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -665,6 +678,7 @@
 					"$(PROJECT_DIR)/TrainWithMe",
 				);
 				INFOPLIST_FILE = TrainWithMe/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackathon.TrainWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";

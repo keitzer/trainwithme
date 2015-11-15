@@ -10,8 +10,15 @@
         <mutableArray key="Comfortaa-Bold.ttf">
             <string>Comfortaa-Bold</string>
             <string>Comfortaa-Bold</string>
+            <string>Comfortaa-Bold</string>
+            <string>Comfortaa-Bold</string>
         </mutableArray>
         <mutableArray key="Comfortaa-Regular.ttf">
+            <string>Comfortaa-Regular</string>
+            <string>Comfortaa-Regular</string>
+            <string>Comfortaa-Regular</string>
+            <string>Comfortaa-Regular</string>
+            <string>Comfortaa-Regular</string>
             <string>Comfortaa-Regular</string>
         </mutableArray>
         <mutableArray key="MontserratAlternates-Bold.ttf">
@@ -31,47 +38,91 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdn-Oe-cSg">
-                                <rect key="frame" x="84" y="63" width="152" height="30"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UQA-Le-yzu">
+                                <rect key="frame" x="-4" y="63" width="328" height="50"/>
+                                <animations/>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bdn-Oe-cSg">
+                                <rect key="frame" x="16" y="63" width="288" height="50"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="I2D-pP-VHK"/>
                                     <constraint firstAttribute="width" constant="152" id="pOq-gr-rI2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="pOq-gr-rI2"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhk-Jm-pSF">
-                                <rect key="frame" x="84" y="101" width="152" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dhk-Jm-pSF">
+                                <rect key="frame" x="16" y="121" width="288" height="50"/>
                                 <animations/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="YJ2-ES-UFY"/>
                                     <constraint firstAttribute="width" constant="152" id="hNS-fm-SyC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="hNS-fm-SyC"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t7R-P6-626">
-                                <rect key="frame" x="84" y="139" width="152" height="30"/>
+                                <rect key="frame" x="-4" y="221" width="328" height="80"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.34901960780000002" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="TaM-Io-gnl"/>
+                                    <constraint firstAttribute="height" constant="80" id="TaM-Io-gnl"/>
                                     <constraint firstAttribute="width" constant="152" id="VZL-rv-G57"/>
                                 </constraints>
-                                <state key="normal" title="Log In"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="25"/>
+                                <state key="normal" title="Log In">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="VZL-rv-G57"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="loginPressed" destination="oBC-et-2PK" eventType="touchUpInside" id="aYZ-hS-xrK"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.396078431372549" green="0.49803921568627452" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="bdn-Oe-cSg" secondAttribute="trailing" id="13T-Mc-Yrn"/>
+                            <constraint firstItem="UQA-Le-yzu" firstAttribute="leading" secondItem="hgt-Bd-mgf" secondAttribute="leadingMargin" constant="-20" id="1iM-99-yXh"/>
                             <constraint firstItem="Dhk-Jm-pSF" firstAttribute="top" secondItem="bdn-Oe-cSg" secondAttribute="bottom" constant="8" id="DTX-6s-JOi"/>
                             <constraint firstItem="bdn-Oe-cSg" firstAttribute="centerX" secondItem="hgt-Bd-mgf" secondAttribute="centerX" id="Evw-12-PHQ"/>
                             <constraint firstItem="Dhk-Jm-pSF" firstAttribute="centerX" secondItem="hgt-Bd-mgf" secondAttribute="centerX" id="Gj5-TY-q4x"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="t7R-P6-626" secondAttribute="trailing" constant="-20" id="GsR-vI-Wz8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dhk-Jm-pSF" secondAttribute="trailing" id="MKh-Wz-QEf"/>
                             <constraint firstItem="t7R-P6-626" firstAttribute="centerX" secondItem="hgt-Bd-mgf" secondAttribute="centerX" id="OyW-iJ-idy"/>
-                            <constraint firstItem="t7R-P6-626" firstAttribute="top" secondItem="Dhk-Jm-pSF" secondAttribute="bottom" constant="8" id="eR3-j1-0Mn"/>
+                            <constraint firstItem="bdn-Oe-cSg" firstAttribute="leading" secondItem="hgt-Bd-mgf" secondAttribute="leadingMargin" id="Veq-np-c32"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UQA-Le-yzu" secondAttribute="trailing" constant="-20" id="dMm-9A-6jx"/>
+                            <constraint firstItem="t7R-P6-626" firstAttribute="top" secondItem="Dhk-Jm-pSF" secondAttribute="bottom" constant="50" id="eR3-j1-0Mn"/>
+                            <constraint firstItem="Dhk-Jm-pSF" firstAttribute="leading" secondItem="hgt-Bd-mgf" secondAttribute="leadingMargin" id="ebD-DR-8z8"/>
+                            <constraint firstItem="UQA-Le-yzu" firstAttribute="height" secondItem="bdn-Oe-cSg" secondAttribute="height" id="h0Z-xT-2hn"/>
+                            <constraint firstItem="UQA-Le-yzu" firstAttribute="centerY" secondItem="bdn-Oe-cSg" secondAttribute="centerY" id="jDs-a2-omP"/>
+                            <constraint firstItem="t7R-P6-626" firstAttribute="leading" secondItem="hgt-Bd-mgf" secondAttribute="leadingMargin" constant="-20" id="k6L-H0-Tnp"/>
                             <constraint firstItem="bdn-Oe-cSg" firstAttribute="top" secondItem="Jvp-bp-W2K" secondAttribute="bottom" constant="43" id="nHr-lW-tCg"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Evw-12-PHQ"/>
+                                <exclude reference="Gj5-TY-q4x"/>
+                                <exclude reference="OyW-iJ-idy"/>
+                            </mask>
+                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -100,25 +151,28 @@
                                 <animations/>
                                 <color key="backgroundColor" red="0.96078431372549022" green="0.34901960784313724" blue="0.44313725490196076" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJO-Mi-DhB">
-                                <rect key="frame" x="0.0" y="250" width="320" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rG-mA-mXC">
+                                <rect key="frame" x="0.0" y="330" width="320" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.96123437499999997" green="0.87459374999999995" blue="0.060735906862745083" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.396078431372549" green="0.49803921568627452" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="183" id="RTX-qw-cW2"/>
-                                    <constraint firstAttribute="height" constant="80" id="T1K-xc-P91"/>
+                                    <constraint firstAttribute="width" constant="154" id="XG1-Nk-ci7"/>
+                                    <constraint firstAttribute="height" constant="80" id="aeA-ug-waf"/>
+                                    <constraint firstAttribute="height" constant="30" id="ftg-uh-pO6"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="25"/>
-                                <state key="normal" title="Sign Up">
+                                <state key="normal" title="Log In">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="RTX-qw-cW2"/>
+                                        <exclude reference="XG1-Nk-ci7"/>
+                                        <exclude reference="aeA-ug-waf"/>
+                                        <exclude reference="ftg-uh-pO6"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="signupPressed" destination="o5p-Cw-eNR" eventType="touchUpInside" id="SIv-D2-Y1t"/>
+                                    <action selector="loginPressed" destination="o5p-Cw-eNR" eventType="touchUpInside" id="Suh-xT-zEL"/>
                                 </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="LaunchIcon" translatesAutoresizingMaskIntoConstraints="NO" id="kAY-W7-fWH">
@@ -140,28 +194,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3rG-mA-mXC">
-                                <rect key="frame" x="0.0" y="330" width="320" height="80"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MJO-Mi-DhB">
+                                <rect key="frame" x="0.0" y="250" width="320" height="80"/>
                                 <animations/>
-                                <color key="backgroundColor" red="0.37647058823529411" green="0.36470588235294116" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.99215686274509807" green="0.63921568627450975" blue="0.098039215686274508" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="154" id="XG1-Nk-ci7"/>
-                                    <constraint firstAttribute="height" constant="80" id="aeA-ug-waf"/>
-                                    <constraint firstAttribute="height" constant="30" id="ftg-uh-pO6"/>
+                                    <constraint firstAttribute="width" constant="183" id="RTX-qw-cW2"/>
+                                    <constraint firstAttribute="height" constant="80" id="T1K-xc-P91"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="25"/>
-                                <state key="normal" title="Log In">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <size key="titleShadowOffset" width="1" height="1"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="default">
                                     <mask key="constraints">
-                                        <exclude reference="XG1-Nk-ci7"/>
-                                        <exclude reference="aeA-ug-waf"/>
-                                        <exclude reference="ftg-uh-pO6"/>
+                                        <exclude reference="RTX-qw-cW2"/>
                                     </mask>
                                 </variation>
                                 <connections>
-                                    <action selector="loginPressed" destination="o5p-Cw-eNR" eventType="touchUpInside" id="Suh-xT-zEL"/>
+                                    <action selector="signupPressed" destination="o5p-Cw-eNR" eventType="touchUpInside" id="SIv-D2-Y1t"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -215,62 +267,104 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pds-o8-ETj">
-                                <rect key="frame" x="84" y="65" width="152" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Pds-o8-ETj">
+                                <rect key="frame" x="16" y="65" width="288" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="AGv-j3-uSh"/>
+                                    <constraint firstAttribute="height" constant="50" id="pRN-0O-1k4"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                                 <textInputTraits key="textInputTraits"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="AGv-j3-uSh"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f16-BM-i0c">
-                                <rect key="frame" x="84" y="141" width="152" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Confirm Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="f16-BM-i0c">
+                                <rect key="frame" x="16" y="181" width="288" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="END-pJ-r5I"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="END-pJ-r5I"/>
+                                    </mask>
+                                </variation>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dty-wF-aQY">
-                                <rect key="frame" x="84" y="103" width="152" height="30"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Dty-wF-aQY">
+                                <rect key="frame" x="16" y="123" width="288" height="50"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="152" id="bLS-6P-9wP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Regular" family="Comfortaa" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="bLS-6P-9wP"/>
+                                    </mask>
+                                </variation>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hSA-Vr-Ufm">
-                                <rect key="frame" x="84" y="179" width="152" height="30"/>
+                                <rect key="frame" x="0.0" y="281" width="320" height="80"/>
                                 <animations/>
+                                <color key="backgroundColor" red="0.96078431369999995" green="0.34901960780000002" blue="0.4431372549" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="EvI-MZ-2SU"/>
+                                    <constraint firstAttribute="height" constant="80" id="EvI-MZ-2SU"/>
                                     <constraint firstAttribute="width" constant="152" id="HDI-Dp-B76"/>
                                 </constraints>
-                                <state key="normal" title="Sign Up"/>
+                                <fontDescription key="fontDescription" name="Comfortaa-Bold" family="Comfortaa" pointSize="25"/>
+                                <state key="normal" title="Sign Up">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="HDI-Dp-B76"/>
+                                    </mask>
+                                </variation>
                                 <connections>
                                     <action selector="signupPressed" destination="EKh-hb-NIp" eventType="touchUpInside" id="ON7-fF-5B6"/>
                                 </connections>
                             </button>
                         </subviews>
                         <animations/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99215686274509807" green="0.63921568627450975" blue="0.098039215686274508" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Dty-wF-aQY" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="2dI-tA-21R"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pds-o8-ETj" secondAttribute="trailing" id="4ol-jW-4qC"/>
+                            <constraint firstItem="f16-BM-i0c" firstAttribute="trailing" secondItem="Pds-o8-ETj" secondAttribute="trailing" id="4wn-Ft-AEa"/>
                             <constraint firstItem="Pds-o8-ETj" firstAttribute="top" secondItem="hly-Bc-Pxq" secondAttribute="bottom" constant="45" id="BoJ-gs-tqB"/>
                             <constraint firstItem="Pds-o8-ETj" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="Idq-03-bHH"/>
-                            <constraint firstItem="hSA-Vr-Ufm" firstAttribute="top" secondItem="f16-BM-i0c" secondAttribute="bottom" constant="8" id="PIf-Sk-Asu"/>
+                            <constraint firstItem="hSA-Vr-Ufm" firstAttribute="top" secondItem="f16-BM-i0c" secondAttribute="bottom" constant="50" id="PIf-Sk-Asu"/>
+                            <constraint firstItem="hSA-Vr-Ufm" firstAttribute="leading" secondItem="4PH-TX-Mnm" secondAttribute="leading" id="Tuk-0i-FgC"/>
+                            <constraint firstAttribute="trailing" secondItem="hSA-Vr-Ufm" secondAttribute="trailing" id="WMZ-fY-nOm"/>
                             <constraint firstItem="Dty-wF-aQY" firstAttribute="top" secondItem="Pds-o8-ETj" secondAttribute="bottom" constant="8" id="Y2W-HW-uI5"/>
+                            <constraint firstItem="Dty-wF-aQY" firstAttribute="trailing" secondItem="Pds-o8-ETj" secondAttribute="trailing" id="ZC4-2o-e9R"/>
+                            <constraint firstItem="Dty-wF-aQY" firstAttribute="height" secondItem="Pds-o8-ETj" secondAttribute="height" id="bQC-qd-5m7"/>
+                            <constraint firstItem="Dty-wF-aQY" firstAttribute="leading" secondItem="Pds-o8-ETj" secondAttribute="leading" id="eiN-1y-GH9"/>
+                            <constraint firstItem="f16-BM-i0c" firstAttribute="height" secondItem="Pds-o8-ETj" secondAttribute="height" id="gcd-Gv-Sbd"/>
                             <constraint firstItem="f16-BM-i0c" firstAttribute="top" secondItem="Dty-wF-aQY" secondAttribute="bottom" constant="8" id="hal-An-LYp"/>
                             <constraint firstItem="f16-BM-i0c" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="pdi-IO-1Vh"/>
                             <constraint firstItem="f16-BM-i0c" firstAttribute="top" secondItem="Pds-o8-ETj" secondAttribute="bottom" constant="8" id="qVl-9I-lb3"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Pds-o8-ETj" secondAttribute="leading" id="qZY-bB-jTB"/>
+                            <constraint firstItem="f16-BM-i0c" firstAttribute="leading" secondItem="Pds-o8-ETj" secondAttribute="leading" id="ty1-Dt-6t1"/>
                             <constraint firstItem="hSA-Vr-Ufm" firstAttribute="centerX" secondItem="4PH-TX-Mnm" secondAttribute="centerX" id="xc7-HK-Iaf"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Idq-03-bHH"/>
+                                <exclude reference="2dI-tA-21R"/>
+                                <exclude reference="pdi-IO-1Vh"/>
                                 <exclude reference="qVl-9I-lb3"/>
+                                <exclude reference="xc7-HK-Iaf"/>
                             </mask>
                         </variation>
                     </view>
@@ -522,7 +616,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -532,12 +626,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="GCJ-EJ-5Tl">
-                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
+                                <rect key="frame" x="-4" y="64" width="328" height="504"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CELL" rowHeight="70" id="6xw-dH-3zv" customClass="BuddyTableViewCell">
-                                        <rect key="frame" x="0.0" y="92" width="328" height="70"/>
+                                        <rect key="frame" x="0.0" y="28" width="328" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6xw-dH-3zv" id="nnK-Qn-efg">
                                             <rect key="frame" x="0.0" y="0.0" width="328" height="69"/>
@@ -593,7 +687,7 @@
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="3qL-Dk-kxi"/>
+                            <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="3qL-Dk-kxi"/>
                             <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="D29-x6-8nF"/>
                             <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Vze-zH-ygw"/>
                             <constraint firstItem="GCJ-EJ-5Tl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="a8Z-Az-UnJ"/>

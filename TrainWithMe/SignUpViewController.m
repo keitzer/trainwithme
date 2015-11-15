@@ -9,11 +9,13 @@
 #import "SignUpViewController.h"
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
+#import "Color.h"
 
 @interface SignUpViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *passwordTextField;
 @property (nonatomic, weak) IBOutlet UITextField *confirmPWTextField;
+@property (nonatomic, strong) UITapGestureRecognizer *tapper;
 @end
 
 @implementation SignUpViewController
@@ -22,11 +24,28 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 	self.navigationItem.title = @"Sign Up";
+	if ([self.usernameTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+		self.usernameTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Username" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1]}];
+	}
+	if ([self.passwordTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+		self.passwordTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Password" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1]}];
+	}
+	if ([self.confirmPWTextField respondsToSelector:@selector(setAttributedPlaceholder:)]) {
+		self.confirmPWTextField.attributedPlaceholder = [[NSAttributedString alloc] initWithString:@"Confirm Password" attributes:@{NSForegroundColorAttributeName: [UIColor colorWithRed:0.9 green:0.9 blue:0.9 alpha:1]}];
+	}
+	
+	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
+	[self.view addGestureRecognizer:self.tapper];
+}
+
+- (void)hideKeyboard {
+	[self.view endEditing:YES];
 }
 
 -(void)viewWillAppear:(BOOL)animated {
 	[super viewWillAppear:animated];
 	
+	[[UINavigationBar appearance] setBarTintColor:[UIColor orangeColor]];
 	[self.navigationController setNavigationBarHidden:NO animated:NO];
 }
 
