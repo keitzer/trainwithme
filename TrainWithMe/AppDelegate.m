@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import <Parse/Parse.h>
+#import "SVProgressHUD.h"
 
 @interface AppDelegate ()
 
@@ -21,6 +22,11 @@
 	
 	[Parse setApplicationId:@"Wmgt9TmgJIxFgupu4BDhUzKQCCElRIiSYutk5ypA"
 				  clientKey:@"HsRD4EIfbxQJcxmpBKRfUx2YwhnsEWheZgldTGJd"];
+	
+	[SVProgressHUD setFont:[UIFont fontWithName:@"Arial" size:20]];
+	[SVProgressHUD setRingThickness:5];
+	[SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeBlack];
+	[SVProgressHUD setForegroundColor:[UIColor colorWithRed:74/255.f green:193/255.f blue:71/255.1 alpha:1]];
 	
 	
 	return YES;

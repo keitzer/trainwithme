@@ -108,6 +108,10 @@
 	[self presentViewController:navBar animated:YES completion:nil];
 }
 
+-(void)accountVCCancelled {
+	[self dismissViewControllerAnimated:YES completion:nil];
+}
+
 -(void)accountVCSaved {
 	[self dismissViewControllerAnimated:YES completion:nil];
 }

@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import <Parse/Parse.h>
+#import "SVProgressHUD.h"
 
 @interface LoginViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
@@ -22,9 +23,13 @@
 }
 
 -(IBAction)loginPressed {
+	[SVProgressHUD showWithStatus:@"Loggin In..."];
+	
 	[PFUser logInWithUsernameInBackground:self.usernameTextField.text
 								 password:self.passwordTextField.text
 									block:^(PFUser *user, NSError *error) {
+										[SVProgressHUD dismiss];
+										
 										if (user) {
 											// Do stuff after successful login.
 											[self dismissViewControllerAnimated:YES completion:nil];

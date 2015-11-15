@@ -10,6 +10,7 @@
 
 @protocol AccountVCDelegate <NSObject>
 
+-(void)accountVCCancelled;
 -(void)accountVCSaved;
 -(void)accountVCLoggedOut;
 

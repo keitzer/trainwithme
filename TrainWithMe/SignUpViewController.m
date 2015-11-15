@@ -8,6 +8,7 @@
 
 #import "SignUpViewController.h"
 #import <Parse/Parse.h>
+#import "SVProgressHUD.h"
 
 @interface SignUpViewController ()
 @property (nonatomic, weak) IBOutlet UITextField *usernameTextField;
@@ -33,11 +34,14 @@
 		return;
 	}
 	
+	[SVProgressHUD showWithStatus:@"Signing Up..."];
 	PFUser *user = [PFUser user];
 	user.username = [self.usernameTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 	user.password = [self.passwordTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];;
 	
 	[user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+		[SVProgressHUD dismiss];
+		
 		if (!error) {   // Hooray! Let them use the app now.
 			if (self.delegate) {
 				[self.delegate signUpViewControllerSucceeded];
