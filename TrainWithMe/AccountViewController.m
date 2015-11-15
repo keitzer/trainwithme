@@ -12,8 +12,9 @@
 #import "ActivityTableViewController.h"
 #import "Color.h"
 #import "TimeViewController.h"
+#import "MapViewController.h"
 
-@interface AccountViewController () <ActivityVCDelegate, TimeVCDelegate>
+@interface AccountViewController () <ActivityVCDelegate, TimeVCDelegate, MapVCDelegate>
 @property (nonatomic, weak) IBOutlet UITextField *nameTextField;
 @property (nonatomic, weak) IBOutlet UITextField *weightTextField;
 @property (nonatomic, weak) IBOutlet UIButton *activityButton;
@@ -24,7 +25,7 @@
 
 @property (nonatomic, strong) NSMutableArray *activityArray;
 @property (nonatomic, strong) NSMutableArray *intensityArray;
-
+@property (nonatomic, strong) NSMutableArray *locationArray;
 @property (nonatomic, strong) NSDate *startTime;
 @property (nonatomic, strong) NSDate *endTime;
 @end
@@ -61,6 +62,12 @@
 	}
 	[self updateTimeButtonText];
 	
+	self.locationArray = currentUser[@"locations"];
+	if (!self.locationArray) {
+		self.locationArray = [[NSMutableArray alloc] init];
+	}
+	[self updateLocationButtonText];
+	
 	self.navigationItem.title = @"Profile";
 	
 	self.tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hideKeyboard)];
@@ -89,6 +96,7 @@
 	currentUser[@"intensities"] = self.intensityArray;
 	currentUser[@"startTime"] = self.startTime;
 	currentUser[@"endTime"] = self.endTime;
+	currentUser[@"locations"] = self.locationArray;
 	
 	[currentUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		
@@ -159,6 +167,21 @@
 	[self.timeButton setTitle:timeLabel forState:UIControlStateNormal];
 }
 
+-(void)updateLocationButtonText {
+	NSString *locationString = @"";
+	if (self.locationArray.count > 1) {
+		locationString = [NSString stringWithFormat:@"%zd Locations", self.locationArray.count];
+	}
+	else if (self.locationArray.count == 1) {
+		locationString = self.locationArray[0];
+	}
+	else {
+		locationString = @"Tap to Choose Location";
+	}
+	
+	[self.locationButton setTitle:locationString forState:UIControlStateNormal];
+}
+
 -(void)cancelPressed {
 	if (self.delegate) {
 		[self.delegate accountVCCancelled];
@@ -184,7 +207,9 @@
 }
 
 -(IBAction)locationPressed {
-	NSLog(@"location pressed");
+	MapViewController *mapVC = [[MapViewController alloc] initWithSavedLocations:self.locationArray];
+	mapVC.delegate = self;
+	[self.navigationController pushViewController:mapVC animated:YES];
 }
 
 -(IBAction)timePressed {
@@ -219,6 +244,16 @@
 }
 
 -(void)timeVCTimesCancelled {
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)mapVCCancelled {
+	[self.navigationController popViewControllerAnimated:YES];
+}
+
+-(void)mapVCSavedLocation:(NSArray *)locations {
+	self.locationArray = [locations mutableCopy];
+	[self updateLocationButtonText];
 	[self.navigationController popViewControllerAnimated:YES];
 }
 

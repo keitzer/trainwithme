@@ -10,6 +10,7 @@
 #import <Parse/Parse.h>
 #import "SVProgressHUD.h"
 #import "Color.h"
+#import <ArcGIS/ArcGIS.h>
 
 @interface AppDelegate ()
 

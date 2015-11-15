@@ -903,6 +903,66 @@
             </objects>
             <point key="canvasLocation" x="1990" y="629"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="HGD-Lt-xM3">
+            <objects>
+                <viewController storyboardIdentifier="mapVC" id="iTj-O0-3lD" customClass="MapViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="N0V-9J-saW"/>
+                        <viewControllerLayoutGuide type="bottom" id="J8R-Fj-Dpa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="eHd-PL-Ggr">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mrT-OD-nDf">
+                                <rect key="frame" x="0.0" y="362" width="320" height="206"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="206" id="Nbm-uZ-sVu"/>
+                                </constraints>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="X1g-OM-A3h">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X1g-OM-A3h" id="fpM-qV-vpS">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <animations/>
+                                        </tableViewCellContentView>
+                                        <animations/>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QEC-ae-m1B" customClass="AGSMapView">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="362"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="mrT-OD-nDf" firstAttribute="leading" secondItem="eHd-PL-Ggr" secondAttribute="leading" id="2Gp-DF-0WC"/>
+                            <constraint firstItem="mrT-OD-nDf" firstAttribute="top" secondItem="QEC-ae-m1B" secondAttribute="bottom" id="DOg-Cb-F1a"/>
+                            <constraint firstAttribute="trailing" secondItem="mrT-OD-nDf" secondAttribute="trailing" id="HzI-gb-9Ft"/>
+                            <constraint firstAttribute="trailing" secondItem="QEC-ae-m1B" secondAttribute="trailing" id="cLO-gn-wyX"/>
+                            <constraint firstItem="QEC-ae-m1B" firstAttribute="top" secondItem="eHd-PL-Ggr" secondAttribute="top" id="cZn-gx-3Jz"/>
+                            <constraint firstItem="J8R-Fj-Dpa" firstAttribute="top" secondItem="mrT-OD-nDf" secondAttribute="bottom" id="hFQ-ik-ama"/>
+                            <constraint firstItem="QEC-ae-m1B" firstAttribute="leading" secondItem="eHd-PL-Ggr" secondAttribute="leading" id="xey-dL-kEe"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="mapView" destination="QEC-ae-m1B" id="tbT-Xd-foZ"/>
+                        <outlet property="tableView" destination="mrT-OD-nDf" id="u98-jV-Gn3"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="m3M-Bh-wAa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2423" y="621"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="Y2c-u1-NeG">
             <objects>

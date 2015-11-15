@@ -68,6 +68,15 @@
 		FEA04D061BF84E74004ACC93 /* Color.m in Sources */ = {isa = PBXBuildFile; fileRef = FEA04D051BF84E74004ACC93 /* Color.m */; };
 		FEA04D081BF86420004ACC93 /* coloredCheckmark.png in Resources */ = {isa = PBXBuildFile; fileRef = FEA04D071BF86420004ACC93 /* coloredCheckmark.png */; };
 		FEE18BD81BF86E1600836B95 /* TimeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE18BD71BF86E1600836B95 /* TimeViewController.m */; };
+		FEE18BDA1BF87B3600836B95 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BD91BF87B3600836B95 /* OpenGLES.framework */; };
+		FEE18BDC1BF87B4000836B95 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BDB1BF87B4000836B95 /* AssetsLibrary.framework */; };
+		FEE18BDE1BF87B4B00836B95 /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BDD1BF87B4B00836B95 /* CoreText.framework */; };
+		FEE18BE01BF87B5500836B95 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BDF1BF87B5500836B95 /* Foundation.framework */; };
+		FEE18BE21BF87B5D00836B95 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BE11BF87B5D00836B95 /* MediaPlayer.framework */; };
+		FEE18BE41BF87B6400836B95 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BE31BF87B6400836B95 /* MobileCoreServices.framework */; };
+		FEE18BE61BF87B6C00836B95 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FEE18BE51BF87B6C00836B95 /* UIKit.framework */; };
+		FEE18BE81BF87BB500836B95 /* ArcGIS.bundle in Resources */ = {isa = PBXBuildFile; fileRef = FEE18BE71BF87BB500836B95 /* ArcGIS.bundle */; };
+		FEE18BEB1BF8827900836B95 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FEE18BEA1BF8827900836B95 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +179,16 @@
 		FEA04D071BF86420004ACC93 /* coloredCheckmark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = coloredCheckmark.png; sourceTree = "<group>"; };
 		FEE18BD61BF86E1600836B95 /* TimeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TimeViewController.h; sourceTree = "<group>"; };
 		FEE18BD71BF86E1600836B95 /* TimeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TimeViewController.m; sourceTree = "<group>"; };
+		FEE18BD91BF87B3600836B95 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		FEE18BDB1BF87B4000836B95 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
+		FEE18BDD1BF87B4B00836B95 /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		FEE18BDF1BF87B5500836B95 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		FEE18BE11BF87B5D00836B95 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		FEE18BE31BF87B6400836B95 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		FEE18BE51BF87B6C00836B95 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FEE18BE71BF87BB500836B95 /* ArcGIS.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = ArcGIS.bundle; path = ../Library/SDKs/ArcGIS/iOS/ArcGIS.framework/Versions/Current/Resources/ArcGIS.bundle; sourceTree = "<group>"; };
+		FEE18BE91BF8827900836B95 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		FEE18BEA1BF8827900836B95 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +196,13 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEE18BE61BF87B6C00836B95 /* UIKit.framework in Frameworks */,
+				FEE18BE41BF87B6400836B95 /* MobileCoreServices.framework in Frameworks */,
+				FEE18BE21BF87B5D00836B95 /* MediaPlayer.framework in Frameworks */,
+				FEE18BE01BF87B5500836B95 /* Foundation.framework in Frameworks */,
+				FEE18BDE1BF87B4B00836B95 /* CoreText.framework in Frameworks */,
+				FEE18BDC1BF87B4000836B95 /* AssetsLibrary.framework in Frameworks */,
+				FEE18BDA1BF87B3600836B95 /* OpenGLES.framework in Frameworks */,
 				FEA04CAE1BF7D30D004ACC93 /* Social.framework in Frameworks */,
 				FEA04CAC1BF7D308004ACC93 /* Accounts.framework in Frameworks */,
 				FEA04CAA1BF7D2FA004ACC93 /* libsqlite3.tbd in Frameworks */,
@@ -214,6 +240,14 @@
 		FE1594FD1BF7CDDA008670B4 = {
 			isa = PBXGroup;
 			children = (
+				FEE18BE71BF87BB500836B95 /* ArcGIS.bundle */,
+				FEE18BE51BF87B6C00836B95 /* UIKit.framework */,
+				FEE18BE31BF87B6400836B95 /* MobileCoreServices.framework */,
+				FEE18BE11BF87B5D00836B95 /* MediaPlayer.framework */,
+				FEE18BDF1BF87B5500836B95 /* Foundation.framework */,
+				FEE18BDD1BF87B4B00836B95 /* CoreText.framework */,
+				FEE18BDB1BF87B4000836B95 /* AssetsLibrary.framework */,
+				FEE18BD91BF87B3600836B95 /* OpenGLES.framework */,
 				FEA04CAD1BF7D30D004ACC93 /* Social.framework */,
 				FEA04CAB1BF7D308004ACC93 /* Accounts.framework */,
 				FEA04CA91BF7D2FA004ACC93 /* libsqlite3.tbd */,
@@ -274,6 +308,8 @@
 				FEA04CCE1BF81CFE004ACC93 /* ActivityTableViewController.m */,
 				FEE18BD61BF86E1600836B95 /* TimeViewController.h */,
 				FEE18BD71BF86E1600836B95 /* TimeViewController.m */,
+				FEE18BE91BF8827900836B95 /* MapViewController.h */,
+				FEE18BEA1BF8827900836B95 /* MapViewController.m */,
 				FEA04D011BF84DFD004ACC93 /* Constants.h */,
 				FEA04D021BF84DFD004ACC93 /* Constants.m */,
 				FEA04D041BF84E74004ACC93 /* Color.h */,
@@ -479,6 +515,7 @@
 				FEA04CD81BF82AE7004ACC93 /* Comfortaa-Light.ttf in Resources */,
 				FEA04CF81BF82E66004ACC93 /* Icon-Small-50.png in Resources */,
 				FEA04D001BF83081004ACC93 /* iTunesArtwork@2x.png in Resources */,
+				FEE18BE81BF87BB500836B95 /* ArcGIS.bundle in Resources */,
 				FE1595191BF7CDDA008670B4 /* LaunchScreen.storyboard in Resources */,
 				FE1595161BF7CDDA008670B4 /* Assets.xcassets in Resources */,
 				FE1595141BF7CDDA008670B4 /* Main.storyboard in Resources */,
@@ -523,6 +560,7 @@
 				FEA04D031BF84DFD004ACC93 /* Constants.m in Sources */,
 				FE15950E1BF7CDDA008670B4 /* AppDelegate.m in Sources */,
 				FEA04CCB1BF81229004ACC93 /* SVProgressHUD.m in Sources */,
+				FEE18BEB1BF8827900836B95 /* MapViewController.m in Sources */,
 				FEA04CBF1BF80347004ACC93 /* AccountViewController.m in Sources */,
 				FE15950B1BF7CDDA008670B4 /* main.m in Sources */,
 				FEA04CCC1BF81229004ACC93 /* SVRadialGradientLayer.m in Sources */,
@@ -667,13 +705,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrainWithMe",
+					"$(HOME)/Library/SDKs/ArcGIS/iOS/",
 				);
 				INFOPLIST_FILE = TrainWithMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackathon.TrainWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -683,13 +730,22 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/TrainWithMe",
+					"$(HOME)/Library/SDKs/ArcGIS/iOS/",
 				);
 				INFOPLIST_FILE = TrainWithMe/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = (
+					"-ObjC",
+					"-framework",
+					ArcGIS,
+					"-l",
+					"c++",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.hackathon.TrainWithMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
