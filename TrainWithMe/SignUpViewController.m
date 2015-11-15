@@ -64,6 +64,13 @@
 	PFUser *user = [PFUser user];
 	user.username = [self.usernameTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];
 	user.password = [self.passwordTextField.text stringByTrimmingCharactersInSet: [NSCharacterSet whitespaceCharacterSet]];;
+	user[@"startTime"] = [NSDate date];
+	user[@"endTime"] = [NSDate date];
+	user[@"weight"] = @(0);
+	user[@"activities"] = @[];
+	user[@"intensities"] = @[];
+	user[@"friends"] = @[];
+	user[@"name"] = @"";
 	
 	[user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
 		[SVProgressHUD dismiss];
