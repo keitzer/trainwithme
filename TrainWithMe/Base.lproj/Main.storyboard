@@ -1063,8 +1063,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9RB-aO-g6P">
-                                        <rect key="frame" x="8" y="84" width="304" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Range" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="9RB-aO-g6P">
+                                        <rect key="frame" x="8" y="119" width="304" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="sAZ-Ah-X05"/>
@@ -1073,8 +1073,8 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-xq-Lxx">
-                                        <rect key="frame" x="8" y="119" width="304" height="30"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intensity" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="gkJ-xq-Lxx">
+                                        <rect key="frame" x="8" y="81" width="304" height="30"/>
                                         <animations/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="30" id="NMj-lH-oWP"/>
@@ -1083,7 +1083,7 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SiU-ah-6Oq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workout Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="SiU-ah-6Oq">
                                         <rect key="frame" x="8" y="46" width="304" height="30"/>
                                         <animations/>
                                         <constraints>
@@ -1106,14 +1106,18 @@
                                     <constraint firstItem="SiU-ah-6Oq" firstAttribute="top" secondItem="ONr-qk-HgS" secondAttribute="bottom" constant="8" id="Ubw-h1-H2A"/>
                                     <constraint firstItem="ONr-qk-HgS" firstAttribute="top" secondItem="274-mr-Nxz" secondAttribute="top" constant="8" id="Y5c-OV-aXn"/>
                                     <constraint firstItem="gkJ-xq-Lxx" firstAttribute="top" secondItem="9RB-aO-g6P" secondAttribute="bottom" constant="5" id="fHV-WJ-JkN"/>
+                                    <constraint firstItem="9RB-aO-g6P" firstAttribute="top" secondItem="gkJ-xq-Lxx" secondAttribute="bottom" constant="8" id="hBR-5Y-V4h"/>
                                     <constraint firstItem="9RB-aO-g6P" firstAttribute="width" secondItem="SiU-ah-6Oq" secondAttribute="width" id="iic-Wm-AAF"/>
                                     <constraint firstItem="SiU-ah-6Oq" firstAttribute="width" secondItem="ONr-qk-HgS" secondAttribute="width" id="lZt-Le-Mbq"/>
+                                    <constraint firstItem="gkJ-xq-Lxx" firstAttribute="top" secondItem="SiU-ah-6Oq" secondAttribute="bottom" constant="5" id="ozo-0t-hfx"/>
                                     <constraint firstItem="SiU-ah-6Oq" firstAttribute="centerX" secondItem="ONr-qk-HgS" secondAttribute="centerX" id="xYv-X4-iMq"/>
-                                    <constraint firstItem="9RB-aO-g6P" firstAttribute="top" secondItem="SiU-ah-6Oq" secondAttribute="bottom" constant="8" id="yjP-QS-mUs"/>
+                                    <constraint firstItem="9RB-aO-g6P" firstAttribute="top" secondItem="SiU-ah-6Oq" secondAttribute="bottom" constant="43" id="yjP-QS-mUs"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
                                         <exclude reference="JEh-Cp-nMl"/>
+                                        <exclude reference="fHV-WJ-JkN"/>
+                                        <exclude reference="yjP-QS-mUs"/>
                                     </mask>
                                 </variation>
                             </view>

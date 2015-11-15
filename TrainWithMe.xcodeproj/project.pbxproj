@@ -463,6 +463,7 @@
 				TargetAttributes = {
 					FE1595051BF7CDDA008670B4 = {
 						CreatedOnToolsVersion = 7.1;
+						DevelopmentTeam = TLL2CEFHFE;
 					};
 					FE15951E1BF7CDDA008670B4 = {
 						CreatedOnToolsVersion = 7.1;
@@ -711,6 +712,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -736,6 +738,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
